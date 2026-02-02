@@ -1,31 +1,30 @@
-import React from 'react';
-import "../Style/variables.css"; 
-import pic1 from "../assets/pictures/10.png"
-import pic2 from "../assets/pictures/1.png"
-import pic3 from "../assets/pictures/3.png"
-import pic4 from "../assets/pictures/4.png"
-import pic5 from "../assets/pictures/5.png"
-import pic6 from "../assets/pictures/6.png"
-import pic7 from "../assets/pictures/7.png"
-import pic8 from "../assets/pictures/1.png"
-import footeromc from "../assets/background/foot.png"
-import title from "../assets/pictures/title.png"
+import React from "react";
+import "../Style/variables.css";
+import pic1 from "../assets/pictures/10.png";
+import pic2 from "../assets/pictures/1.png";
+import pic3 from "../assets/pictures/3.png";
+import pic4 from "../assets/pictures/4.png";
+import pic5 from "../assets/pictures/5.png";
+import pic6 from "../assets/pictures/6.png";
+import pic7 from "../assets/pictures/7.png";
+import pic8 from "../assets/pictures/1.png";
+import title from "../assets/pictures/title.png";
 // Your new CSS file
 /* Import your club images here */
-// import img1 from "../assets/pics/club1.png" 
-import alien2 from "../assets/sposnsors/alien.png"
-import squid from "../assets/sposnsors/squid.png"
+// import img1 from "../assets/pics/club1.png"
+import alien2 from "../assets/sposnsors/alien.png";
+import squid from "../assets/sposnsors/squid.png";
 
 export default function Pictures() {
   return (
     <div className="film-page">
       <div className="film-content">
         <div className="title-group">
-    <img src={squid} className="pics-deco squid" alt="squid" />
-    <img src={title} className="film-title" alt="Pictures Title" />
-    <img src={alien2} className="pics-deco alien2" alt="alien" />
-  </div>
-        
+          <img src={squid} className="pics-deco squid" alt="squid" />
+          <img src={title} className="film-title" alt="Pictures Title" />
+          <img src={alien2} className="pics-deco alien2" alt="alien" />
+        </div>
+
         <div className="film-strip">
           <div className="film-track">
             <img src={pic1} alt="pic1" />
