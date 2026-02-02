@@ -1,0 +1,354 @@
+/* === Container === */
+.figma-window {
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  border: 1px solid #333;
+  color: #ddd;
+}
+
+/* === Top Toolbar === */
+.figma-topbar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #2b2b2b;
+  border-bottom: 1px solid #444;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.figma-topbar span {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.figma-topbar span:hover {
+  background-color: #3a3a3a;
+}
+
+.figma-topbar button {
+  display: flex;           /* Make the button a flex container */
+  align-items: center;     /* Vertically center icon + text */
+  gap: 4px;                /* Space between icon and text */
+  padding: 4px 10px;       /* Adjust padding */
+  background: transparent;  /* Remove default button background */
+  border: none;            /* Remove default border */
+  color: #eee;             /* Text color in dark mode */
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: #555 1px solid;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.figma-topbar button:hover {
+  background-color: #3a3a3a;
+}
+
+.figma-topbar button img {
+  width: 16px;   /* Icon size */
+  height: 16px;
+}
+
+.figma-title {
+  margin-left: auto;
+  font-weight: 600;
+  color: #eee;
+}
+
+/* === Main Area === */
+.figma-main {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+/* === Left Panel (Layers) === */
+.figma-leftpanel {
+  width: 200px;
+  background-color: #2a2a2a;
+  padding: 12px;
+  border-right: 1px solid #444;
+  font-size: 13px;
+}
+
+.figma-leftpanel h3 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.figma-leftpanel ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.figma-leftpanel li {
+  font-size: 13px;
+  margin: 6px 0;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.figma-leftpanel li:hover {
+  background-color: #3a3a3a;
+}
+
+.figma-leftpanel li img {
+  width: 14px;
+  height: 14px;
+}
+
+/* === Canvas === */
+.figma-canvas {
+  flex: 1;
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: auto;
+  padding: 15px;
+}
+
+.artboard {
+  width: 450px;
+  height: 350px;
+  background-color: #2e2e2e;
+  border: 2px dashed #555;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* === Shapes === */
+.rectangle {
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff7a59, #ff4b1f);
+  margin: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.rectangle:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  font-size: 13px;
+  margin: 5px;
+  color: #ddd;
+}
+
+
+/* === Right Panel (Properties) === */
+.figma-rightpanel {
+  width: 220px;
+  background-color: #2a2a2a;
+  padding: 12px;
+  border-left: 1px solid #444;
+  font-size: 13px;
+}
+
+.figma-rightpanel h3 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.figma-rightpanel p {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #ccc;
+}
+
+/* === Scrollbars for canvas === */
+.figma-canvas::-webkit-scrollbar {
+  width: 8px;
+}
+
+.figma-canvas::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+.figma-canvas::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+
+  /* Main becomes column */
+  .figma-main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Left panel (Layers) on top */
+  .figma-leftpanel {
+    display: flex;
+    width: 100%;
+    max-height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px;
+    flex-wrap: wrap;
+    order: -1; /* Move to top */
+    background-color: #2a2a2a;
+    border-right: none;
+    border-bottom: 1px solid #444;
+  }
+
+  /* Right panel (Properties) at bottom */
+  .figma-rightpanel {
+    display: flex;
+    width: 100%;
+    max-height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px;
+    flex-wrap: wrap;
+    order: 1; /* Move to bottom */
+    background-color: #2a2a2a;
+    border-left: none;
+    border-top: 1px solid #444;
+  }
+
+  /* Canvas takes full width */
+  .figma-canvas {
+    flex: 1;
+    width: 100%;
+    padding: 5px;
+    order: 0; /* Stay in the middle */
+  }
+
+  .artboard {
+    width: 100%;
+    height: 250px;
+    max-width: 100%;
+  }
+
+  /* Shapes and text smaller */
+  .rectangle {
+    width: 80px;
+    height: 40px;
+    font-size: 11px;
+  }
+
+  .text {
+    font-size: 11px;
+  }
+
+  /* Topbar adjustments */
+  .figma-topbar {
+    flex-wrap: wrap;
+    padding: 6px 8px;
+  }
+
+  .figma-topbar button {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  .figma-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Left Panel (Layers) text adjustments */
+  .figma-leftpanel h3 {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #ccc;
+    white-space: nowrap; /* Prevent wrapping of title */
+  }
+
+  .figma-leftpanel ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .figma-leftpanel li {
+    font-size: 12px;
+    margin: 0;
+    padding: 4px 8px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  /* Right Panel (Properties) text adjustments */
+  .figma-rightpanel h3 {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #ccc;
+    white-space: nowrap;
+  }
+
+  .figma-rightpanel p {
+    font-size: 12px;
+    margin: 2px 8px; /* add horizontal padding */
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Make right panel scrollable if content overflows */
+  .figma-rightpanel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+  }
+
+  /* Panels flex layout */
+  .figma-leftpanel,
+  .figma-rightpanel {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
+

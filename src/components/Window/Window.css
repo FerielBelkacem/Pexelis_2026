@@ -1,0 +1,119 @@
+
+
+.window {
+  width: min(85vw, 1050px);
+  height: min(80vh, 760px);
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+
+  max-width: 100%;
+  max-height: 100%;
+
+  background-image: url("../src/assets/background/background.svg");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  body {
+    align-items: stretch;
+  }
+
+  .window {
+    position: relative;   /* 🔁 cancel absolute */
+    top: auto;
+    left: auto;
+    transform: none;
+
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  
+
+  .window-content {
+    padding: 16px;
+  }
+}
+
+
+
+
+/* put image inside content flow */
+
+
+/* ---------- title bar ---------- */
+.title-bar {
+  height: 56px;
+  background: radial-gradient(circle, #0e1538, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  color: #cbd5f5;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* ---------- fixed image inside window ---------- */
+
+.window-content {
+  position: relative; /* 🔑 needed for absolute positioning inside */
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  
+  gap: clamp(24px, 6vh, 64px);
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.window-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Decorative images */
+
+
+
+
+/* ---------- controls ---------- */
+.controls span {
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  font-size: 22px;
+}
+
+.controls span:hover {
+  opacity: 1;
+}
+
+.controls .close {
+  color: #eeeeee;
+}

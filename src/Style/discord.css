@@ -1,0 +1,139 @@
+.--logincontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../assets/Discord/login_bg.svg);
+  height: 100vh;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.--outerformcontainer {
+  display: flex;
+  background-color: #36393f;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+label,
+input {
+  display: block;
+}
+
+.--formHeading {
+  color: white;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.--formsubheading {
+  text-align: center;
+  color: #b9bbbe;
+  margin-top: 5px;
+}
+
+.--email {
+  color: #b9bbbe;
+}
+
+.--password {
+  color: #b9bbbe;
+}
+
+.--formsection {
+  padding: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #313339;
+  border: 1px solid;
+  text-align: left;
+  color: white;
+}
+
+.--qrcodeimage {
+  border: 10px solid white;
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+.--loginwithqr {
+  max-width: 15rem;
+  color: white;
+}
+
+.--qrcodesection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.--qrcodesection > p {
+  color: #b3b4b7;
+  text-align: center;
+  max-width: 15rem;
+}
+
+.--forgotpassword {
+  color: #00aff4;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-decoration: none;
+}
+
+.--loginbutton {
+  background-color: #6270fb;
+  border: 0px;
+  border-radius: 2px;
+  padding: 10px;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: large;
+}
+
+.--needaccount {
+  color: #72767d;
+}
+
+.--registerlink {
+  color: #00aff4;
+  text-decoration: none;
+}
+
+.--lastsectionoftheform {
+  display: flex;
+  align-items: center;
+}
+
+.--lastsectionoftheform > a {
+  margin-left: 10px;
+}
+
+label {
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  
+  .--qrcodesection {
+    display: none;
+  }
+
+form {
+    margin-right: 0;
+}
+}

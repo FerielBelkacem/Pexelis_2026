@@ -1,0 +1,72 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url("./assets/background/Subtract.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: "Inter", system-ui, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden; /* prevent accidental scroll */
+}
+
+@media (max-width: 768px) {
+  body {
+
+    padding-right: 20px;
+    background-image:
+      url("./assets/decorations/Group 288743.svg"), /* TOP */
+      url("./assets/background/background.svg");   /* BOTTOM */
+
+    background-size:
+      auto 80%,   /* PNG size (NOT full) */
+      cover;
+
+    background-position:
+      right center, /* ← THIS is the key */
+      center;
+
+    background-repeat:
+      no-repeat,
+      no-repeat;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  body {
+    align-items: stretch;
+  }
+
+  
+}

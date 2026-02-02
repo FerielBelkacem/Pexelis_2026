@@ -1,0 +1,538 @@
+/* Styles pour le tableau de classement */
+.leaderboard-table-container {
+  margin: 2rem auto;
+  max-width: 990px;
+  height: 370px;
+  padding: 1rem;
+  overflow: hidden;
+  margin-top: -2.8rem;
+  position: relative;
+}
+
+.table-cadre-wrapper {
+  position: relative;
+  width: 100%;
+  height: 540px; /* Hauteur du tableau + marges pour le cadre */
+}
+
+.cadre-overlay {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  z-index: 5;
+  pointer-events: none; /* Pour que le cadre ne bloque pas les interactions */
+}
+
+.cadre-image {
+  margin-top: 15px;
+  width: 100%;
+  height: 63%;
+  object-fit: fill;
+}
+
+.table-scroll-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 500px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+  position: relative;
+  z-index: 15;
+}
+
+/* Pour un scroll fluide avec en-tête fixe */
+.leaderboard-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: table;
+  width: 100%;
+}
+
+.leaderboard-table tbody {
+  display: block;
+  width: 100%;
+  max-height: calc(345px - 60px);
+  overflow-y: auto;
+}
+
+.leaderboard-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  width: 14.28%;
+  box-sizing: border-box;
+}
+
+/* Bordure sous l'en-tête du tableau */
+.leaderboard-table thead th {
+  border-bottom: 2px solid #F3C01D;
+}
+
+.table-header {
+  color: white;
+}
+
+/* Styles pour les lignes du tableau */
+.leaderboard-table tbody tr:nth-child(1) {
+  background-color: rgba(255, 108, 55, 0.05);
+  border-bottom: 2px solid #F3C01D;
+}
+
+.leaderboard-table tbody tr:nth-child(2) {
+  background-color: rgba(255, 89, 90, 0.05);
+  border-bottom: 2px solid #F93D3E;
+}
+
+.leaderboard-table tbody tr:nth-child(3) {
+  background-color: rgba(122, 183, 255, 0.05);
+  border-bottom: 2px solid #7AB7FF;
+}
+
+.leaderboard-table tbody tr:nth-child(4) {
+  background-color: rgba(122, 183, 255, 0.05);
+  border-bottom: 2px solid #7AB7FF;
+}
+
+.leaderboard-table tbody tr:nth-child(n+5) {
+  background-color: rgba(137, 49, 237, 0.05);
+  border-bottom: 2px solid #8931ED;
+}
+
+/* Effet hover pour toutes les lignes */
+.leaderboard-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Cacher la scrollbar */
+.leaderboard-table::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboard-table {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.leaderboard-table tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboard-table tbody {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Loading overlay */
+.pexelis-loading {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal {
+  position: relative;
+  background: #020409;
+  border: 1px solid #00ff9c;
+  box-shadow: 0 0 25px rgba(0, 255, 156, 0.25);
+  padding: 20px 24px;
+  width: 420px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: #7b028b;
+  border-radius: 8px;
+}
+
+.terminal p {
+  margin: 6px 0;
+}
+
+.terminal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%   { content: ""; }
+  33%  { content: "."; }
+  66%  { content: ".."; }
+  100% { content: "..."; }
+}
+
+.cursor {
+  margin-top: 10px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-cadre-wrapper {
+    height: 240px; /* Ajustement pour mobile */
+  }
+  
+  .table-scroll-wrapper {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .leaderboard-table {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .leaderboard-table tbody {
+    max-height: calc(390px - 60px);
+    
+  }
+  
+  .cadre-overlay {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .leaderboard-table-container {
+    padding: 0.5rem;
+  }
+}
+
+/* ========== RESPONSIVE STYLES FOR MOBILE ========== */
+
+@media (max-width: 768px) {
+  /* Container principal */
+  .discord-page {
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Image d'en-tête */
+  .about-bg {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Container du tableau - VERSION MODIFIÉE */
+  .leaderboard-table-container {
+    max-width: 100%;
+    height: auto;
+    padding: 0px;
+    margin-top: -10px;
+    overflow: hidden; /* Important pour cacher le scroll externe */
+  }
+
+  /* Wrapper du cadre */
+  .table-cadre-wrapper {
+    height: auto;
+    min-height: 400px;
+    overflow: hidden; /* Cache tout débordement */
+  }
+
+  /* Cadre décoratif */
+  .cadre-overlay {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    overflow: hidden;
+  }
+
+  .cadre-image {
+    display: none !important; /* Cache l'image du cadre */
+  }
+
+  /* Wrapper du scroll - VERSION SANS SCROLLBAR VISIBLE */
+  .table-scroll-wrapper {
+    height: auto;
+    min-height: 300px;
+    max-height: 450px;
+    overflow: auto; /* Permet le scroll mais cache la barre */
+    position: relative;
+    /* Cache toutes les scrollbars */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  /* Cache la scrollbar WebKit */
+  .table-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  /* Tableau principal - version mobile */
+  .leaderboard-table {
+    display: table;
+    width: 100%;
+    height: auto;
+    min-width: 700px; /* Largeur minimale pour le scroll horizontal */
+    overflow: hidden; /* Pas de overflow sur le tableau lui-même */
+    border-radius: 8px;
+    /* Cache toutes les scrollbars */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  /* Cache la scrollbar WebKit pour le tableau */
+  .leaderboard-table::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  /* En-tête du tableau */
+  .leaderboard-table thead {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+
+  .leaderboard-table th {
+    min-width: 80px;
+    font-size: 0.8rem;
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  .leaderboard-table td {
+    min-width: 80px;
+    font-size: 0.8rem;
+    padding: 8px 6px;
+    white-space: nowrap;
+  }
+
+  /* Cellules spécifiques */
+  .rank-cell {
+    font-weight: bold;
+    min-width: 50px;
+  }
+
+  /* Lignes du tableau */
+  .leaderboard-table tbody tr {
+    height: 40px;
+  }
+
+  /* Corps du tableau - cacher la scrollbar */
+  .leaderboard-table tbody {
+    max-height: 390px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .leaderboard-table tbody::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  /* RESPONSIVE POUR TRÈS PETITS ÉCRANS */
+  @media (max-width: 480px) {
+    .leaderboard-table th {
+      font-size: 0.7rem;
+      padding: 6px 4px;
+      min-width: 70px;
+    }
+
+    .leaderboard-table td {
+      font-size: 0.7rem;
+      padding: 6px 4px;
+      min-width: 70px;
+    }
+
+    .rank-cell {
+      min-width: 40px;
+    }
+
+    .leaderboard-table {
+      min-width: 650px;
+    }
+
+    .table-scroll-wrapper {
+      max-height: 400px;
+    }
+
+    .table-cadre-wrapper {
+      min-height: 350px;
+    }
+  }
+
+  /* POUR LES TABLETTES */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .leaderboard-table th {
+      font-size: 0.85rem;
+      padding: 10px 8px;
+    }
+
+    .leaderboard-table td {
+      font-size: 0.85rem;
+      padding: 10px 8px;
+    }
+
+    .leaderboard-table {
+      min-width: 750px;
+    }
+  }
+}
+
+/* ========== STYLES GLOBAUX POUR CACHER LES SCROLLBARS ========== */
+
+/* Pour tous les éléments avec scroll */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Pour WebKit browsers (Chrome, Safari, Opera) */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* ========== CORRECTION SPÉCIFIQUE POUR LE CADRE ========== */
+@media (max-width: 768px) {
+  .cadre-image {
+    object-fit: contain;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  .table-cadre-wrapper {
+    padding: 5px;
+    overflow: hidden;
+  }
+
+  .cadre-overlay {
+    pointer-events: none;
+  }
+}
+
+/* ========== AMÉLIORATION DE LA VISIBILITÉ ========== */
+@media (max-width: 768px) {
+  .leaderboard-table thead {
+    background: linear-gradient(135deg, #0e1538 0%, #020617 100%);
+  }
+
+  .leaderboard-table th {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #F3C01D;
+  }
+
+  /* Amélioration de la lisibilité des lignes */
+  .leaderboard-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Effet hover plus visible sur mobile */
+  .leaderboard-table tbody tr:active {
+    background-color: rgba(122, 183, 255, 0.2) !important;
+    transform: scale(0.99);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* ========== OPTIMISATION POUR HAUTEUR ========== */
+@media (max-height: 600px) and (max-width: 768px) {
+  .leaderboard-table-container {
+    height: 300px;
+  }
+
+  .table-scroll-wrapper {
+    height: 280px;
+    max-height: 280px;
+  }
+
+  .leaderboard-table tbody {
+    max-height: 220px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 6px 4px;
+    font-size: 0.75rem;
+  }
+
+  .table-cadre-wrapper {
+    min-height: 320px;
+  }
+}
+
+/* ========== SUPPRESSION DES ANCIENS STYLES DE SCROLLBAR ========== */
+/* Supprimez ou commentez ces lignes si elles existent : */
+
+/*
+.leaderboard-table::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboard-table {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.leaderboard-table tbody::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboard-table tbody {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+*/

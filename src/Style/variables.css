@@ -1,0 +1,1306 @@
+.window-content.home-page {
+  height: 100%;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(12px, 3vh, 32px);
+}
+
+.home-page .hero-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;             /* let it scale naturally */
+  object-fit: contain;      /* preserves whole image */
+  margin-bottom: 20px;      /* space below hero */
+}
+
+
+
+.start-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  width: clamp(120px, 18vw, 200px);
+}
+
+.start-btn img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.about-page {
+   
+  position: relative;
+  width: 100%;
+  overflow-x: hidden; /* ✅ PREVENT horizontal overflow */
+  padding-bottom: 0;
+}
+.about-content {
+  /* Reduced from 900px to 750px to make the text column narrower */
+  max-width: 750px; 
+  width: 100%;
+  margin-inline: auto;
+  
+  padding-top: 0px;
+  /* Increased padding to push text further inward */
+  padding-left: 15%;
+  padding-right: 15%;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* Space between sections */
+
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Ensure the titles don't stay absolute so they don't float over the icons */
+.what-pexiles {
+  position: relative; 
+  top: 0;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Adjusting the decoration container to ensure icons stay in the margins */
+.about-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+}
+
+.decor.alien {
+  top: 300px;
+  right: 5%; /* Using small percentage keeps it in the right margin */
+}
+
+.decor.aboutus {
+  top: 300px;
+  left: 3%; /* Using small percentage keeps it in the left margin */
+  animation: float 3s ease-in-out infinite;
+}
+.decor.omctag{
+   top: 700px;
+  left: 3%; /* Using small percentage keeps it in the left margin */
+  animation: float 3s ease-in-out infinite;
+}
+/* ---------- decorations ---------- */
+
+
+.decor {
+  position: absolute;
+  width: 112px;
+  max-width: 25vw;            /* ✅ prevents huge overflow */
+  opacity: 0.9;
+  
+}
+
+
+
+.decor.execution {
+  top: 460px;
+  left: 340px;
+  width: 165px;
+}
+
+.decor.omc {
+  top: 650px;
+  right: 50px;
+}
+
+.decor.figma {
+  width: 66px;
+  top: 1250px;
+  right: 7px;
+}
+.decor.linuks{
+  width: 100px;
+  top: 1750px;
+  left: 7px;
+}
+.decor.key {
+  top: 2150px;
+  right: 180px;
+  width: 280px;
+  
+  max-width: 40vw;           /* ✅ critical fix */
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ---------- responsive decorations ---------- */
+
+
+/* ---------- content column ---------- */
+
+
+.top-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0%;
+}
+
+.top-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  margin-bottom: -100px;
+}
+
+/* ---------- section wrapper ---------- */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Adjusted spacing between title and text */
+}
+
+/* ---------- title image ---------- */
+.about-title img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* FIXED: Changed from absolute to relative to keep it in the layout flow */
+
+/* ---------- text ---------- */
+.about-text,
+.Ready-text {
+  max-width: 100%; /* Changed to 100% to rely on container padding */
+  width: 100%;
+  color: #ffffff;
+  line-height: 1.7;
+  font-family: "Clash Display";
+  font-weight: 400;
+  margin: 0; /* Reset margins for consistency */
+}
+
+.about-text {
+  font-size: 1.5rem; /* Slightly reduced for better readability on long text */
+  letter-spacing: 0.04025rem;
+}
+
+.Ready-text {
+  font-size: 1.5rem;
+  letter-spacing: 0.03rem;
+}
+
+/* ---------- highlights ---------- */
+.design,
+.dev {
+  padding: 2px 10px;
+  font-weight: 600;
+  margin: 0 4px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.design { background-color: #a855f7; }
+.dev { background-color: #3b82f6; }
+
+/* ---------- layout blocks ---------- */
+.phases {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.phase-card img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* ========== RESPONSIVE STYLES FOR MOBILE ========== */
+@media (max-width: 1024px) {
+  .decor {
+    width: 42px;
+    max-width: 20vw;
+  }
+
+  .decor.dino {
+    top: 240px;
+    left: 20px;
+  }
+
+  .decor.alien {
+    top: 380px;
+    right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  /* Container principal */
+  .about-page {
+    width: 100%;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Contenu principal */
+  .about-content {
+    padding: 0 16px !important; /* Force le padding sur mobile */
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  /* Images décoratives - réduites et repositionnées */
+  .about-decorations {
+    display: none; /* Cache toutes les décorations sur mobile */
+  }
+
+  /* Optionnel: si vous voulez garder quelques décorations */
+  .about-decorations .decor {
+    display: none; /* Cache toutes par défaut */
+  }
+
+  /* Gardez seulement quelques éléments importants */
+  .about-decorations .aboutus,
+  .about-decorations .omc {
+    display: block;
+    width: 80px !important;
+    position: absolute !important;
+  }
+
+  .about-decorations .aboutus {
+    top: 50px !important;
+    left: 20px !important;
+  }
+
+  .about-decorations .omc {
+    top: 50px !important;
+    right: 20px !important;
+  }
+
+  /* Image du haut */
+  .top-img-wrapper {
+    padding: 0 !important;
+    margin-bottom: 30px;
+  }
+
+  .top-img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+
+  /* Titres */
+  .about-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .about-title img {
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .what-pexiles {
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 20px;
+  }
+
+  /* Textes */
+  .about-text,
+  .Ready-text {
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+    padding: 0 8px;
+    text-align: center;
+    max-width: 100% !important;
+  }
+
+  .about-text {
+    font-size: 1.2rem !important;
+    margin-top: 26px;
+  }
+
+  /* Mots en surbrillance */
+  .design,
+  .dev {
+    padding: 2px 8px;
+    margin: 0 2px;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+
+  /* Phases section */
+  .phases {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .phase-card {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none !important; /* Supprime les fonds colorés */
+    border-radius: 12px;
+    padding: 0;
+  }
+
+  .phase-1,
+  .phase-2 {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  /* Espacement entre les phases */
+  .phase-card.purple,
+  .phase-card.blue {
+    margin: 10px 0;
+  }
+
+  /* CTA section */
+  .cta {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .cta .about-title {
+    margin-bottom: 25px;
+  }
+
+  /* Logo OMC */
+  .omc-logo {
+    width: 100%;
+    max-width: 250px;
+    margin: 40px auto 20px !important;
+    display: block;
+  }
+
+  br {
+    display: none; 
+  }
+
+  .about-section {
+    gap: 20px;
+    margin-bottom: 40px;
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 0 12px !important;
+    gap: 30px;
+  }
+
+  .about-text {
+    font-size: 1.1rem !important;
+  }
+
+  .Ready-text {
+    font-size: 1rem !important;
+  }
+
+  .design,
+  .dev {
+    font-size: 1rem;
+    padding: 1px 6px;
+  }
+
+  .about-title img {
+    max-width: 250px;
+  }
+
+  .phase-card {
+    max-width: 280px;
+  }
+
+  .top-img {
+    max-width: 250px;
+  }
+
+  .omc-logo {
+    max-width: 200px;
+  }
+
+  .about-decorations .decor {
+    width: 60px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-content {
+    padding: 0 10% !important;
+  }
+
+  .about-text {
+    font-size: 1.5rem !important;
+  }
+
+  .Ready-text {
+    font-size: 1.3rem !important;
+  }
+
+  .decor {
+    width: 80px;
+  }
+
+  .decor.key {
+    width: 200px;
+    right: 200px;
+  }
+
+  .decor.execution {
+    left: 400px;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    transform: translateY(-10px) scale(0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(0.6);
+    }
+    50% {
+      transform: translateY(-5px) scale(0.6);
+    }
+  }
+}
+
+.window-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.about-page * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.about-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+.sponsors-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+
+}
+
+
+.sponsors-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px ; 
+
+}
+
+.shapes-container {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+ margin-bottom: 10px;
+
+
+}
+
+
+.our-spons {
+  width: min(420px, 90%);
+  margin-bottom: 58px;
+
+}
+
+.shape-img {
+  width: 100%;
+  display: block;
+}
+.shape-box {
+  position: relative; 
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc-img {
+  position: absolute; 
+  width: 90px;        
+  z-index: 5;         
+}
+
+.purple .desc-img {
+  margin-left: 200px;
+
+  top: -40px;
+  left: -30px;
+}
+
+.blue .desc-img {
+  bottom: -30px;
+  left: -20px;
+}
+
+.red .desc-img {
+  bottom: -30px;
+  right: -30px;
+}
+.our-spons.support{
+  position: absolute;
+  width: 100px;
+   z-index: 1;
+   top: 170px; 
+   right: 250px;
+
+}
+
+.footer-wrapper {
+
+  width: 100%;
+}
+.footer-img {
+  width: 100%;
+  display: block;
+}
+
+.spons-deco {
+  position: absolute;
+  width: 50px;
+  max-width: 25vw;            
+
+
+}
+
+.spons-deco.squid{
+  right: 340px;
+  top: 67px;
+  opacity: 0.8;
+    transform: scale(0.7);
+    animation: float 3s ease-in-out infinite;
+}
+.spons-deco.alien2{
+  width: 70px;
+  left: 340px;
+  top: 67px;
+  opacity: 0.8; 
+    transform: scale(0.7);
+    animation: float 3s ease-in-out infinite;
+}
+.spons-deco.deco{
+  width: 30px;
+  top: 450px;
+  left: 170px;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.omc-page {
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* Decorative characters */
+.deco {
+     position: absolute;
+  width: 50px;
+  max-width: 25vw; 
+}
+.deco.squid{
+  width: 50px;
+  left: 140px;
+  top: 100px;
+  opacity: 0.9; 
+    transform: scale(0.7);
+    animation: float 3s ease-in-out infinite;
+}
+.deco.alien{
+  width: 70px;
+  right: 140px;
+  top: 90px;
+  opacity: 0.9;
+    transform: scale(0.7);
+    animation: float 3s ease-in-out infinite;
+  /**/
+  
+}
+/* The Grid */
+
+
+
+
+/* Text positioning over the card image */
+.card-info {
+    position: absolute;
+    bottom: 35px; /* Adjust to sit inside your border asset */
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+.handle {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    display: block;
+}
+
+/* Container for the whole content */
+.omc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px; /* Allows the grid to spread out more */
+    margin: 0 auto;
+}
+
+/* Header Adjustments */
+.omc-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; 
+    margin-bottom: 50px;
+}
+
+.title-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.title-img {
+  
+    width: 320px; /* Size of "Our Socials" */
+}
+
+.contact-btn {
+    width: 120px; /* Size of your contact asset */
+    position: absolute;
+    right: -110px; /* Pushes it to the right of the title */
+    top: 90px;
+    transform: translateY(-20%);
+}
+
+/* --- THE CARDS --- */
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.social-card {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+    transform: scale(1.05);
+}
+
+.card-bg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+/* --- RESPONSIVE DESIGN FOR SMALL DEVICES --- */
+
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+    .socials-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+        gap: 20px;
+        width: 95%;
+    }
+    
+    .card-bg {
+        max-width: 250px;
+    }
+}
+
+/* For tablets in portrait mode and large phones */
+@media (max-width: 768px) {
+    .socials-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 15px;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .card-bg {
+        max-width: 220px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .socials-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        gap: 20px;
+        padding: 15px 10px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    
+    .card-bg {
+        max-width: 280px; /* Can make it larger since it's single column */
+    }
+    
+    /* Optional: Reduce hover effect on touch devices */
+    .social-card:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* For very small phones */
+@media (max-width: 360px) {
+    .socials-grid {
+        gap: 15px;
+        padding: 10px 5px;
+    }
+    
+    .card-bg {
+        max-width: 260px;
+    }
+}
+
+.terminal-cool {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove padding to take full width */
+  background: #0a0a0a;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 40, 0, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 80, 0, 0.1) 0%, transparent 20%);
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  width: 100%;
+  margin: 0;
+}
+
+.terminal-frame {
+  width: 100%; /* Take full width of parent */
+  max-width: none; /* Remove max-width constraint */
+  height: 100vh; /* Take full viewport height */
+  background: rgba(10, 15, 10, 0.9);
+  border-radius: 0; /* Remove rounded corners for full-screen look */
+  overflow: hidden;
+  border: none; /* Remove border for clean edges */
+  box-shadow: none; /* Remove shadow for full-screen */
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: linear-gradient(90deg, #001a00, #003300);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #00ff0020;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.terminal-title {
+  color: #00ff00;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27ca3f; }
+
+.dot:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px currentColor;
+}
+
+.terminal-content {
+  margin-top: -100px;
+  padding: 30px;
+  flex: 1; /* Take remaining space */
+  overflow-y: auto; /* Keep scroll if content overflows */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.command-line {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  max-width: 800px; /* Limit width for better readability */
+}
+
+.prompt {
+  color: #87d441;
+  font-weight: bold;
+}
+
+.command {
+  color: #e6e6e6;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.output {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px; /* Center content with max-width */
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  background: rgba(0, 30, 0, 0.3);
+  border-radius: 6px;
+  border-left: 3px solid #ff4444;
+}
+
+.tag {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.status-closed {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.ascii-art {
+  color: #00ff00;
+  margin: 30px 0;
+  font-size: 0.7rem;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  filter: brightness(1.2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.message-line {
+  color: #4dff4d;
+  font-size: 1.1rem;
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(0, 255, 0, 0.05);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.arrow {
+  color: #00ff00;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.progress {
+  margin: 40px 0;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 255, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, #00ff00, #88ff88);
+  border-radius: 2px;
+  animation: loading 3s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0%, 100% { width: 30%; }
+  50% { width: 70%; }
+}
+
+.progress-text {
+  color: #88ff88;
+  font-size: 0.9rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.cursor {
+  color: #00ff00;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-footer {
+  padding: 15px 20px;
+  margin-top: -200px;
+  background: rgba(0, 20, 0, 0.5);
+  border-top: 1px solid #00ff0010;
+  text-align: center;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.hint {
+  color: #666;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  animation: hint-pulse 3s infinite;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Remove hover effects since it's full-screen */
+.terminal-frame:hover {
+  box-shadow: none;
+}
+
+/* Responsive - For mobile, still full width */
+@media (max-width: 768px) {
+  .terminal-frame {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .terminal-content {
+    padding: 20px;
+  }
+  
+  .ascii-art pre {
+    font-size: 0.6rem;
+  }
+  
+  .message-line {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-content {
+    padding: 15px;
+  }
+  
+  .ascii-art {
+    display: none;
+  }
+  
+  .status-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .terminal-header {
+    padding: 12px 15px;
+  }
+}
+
+.pictures-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  
+  
+}
+
+
+
+.film-page {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.film-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  margin-top:-100px;
+}
+
+/* ---------- Title Group & Floating Icons ---------- */
+.title-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px; 
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.film-title {
+  width: 320px;
+  filter: drop-shadow(0 0 15px rgba(137, 49, 237, 0.4)); /* Glow effect */
+}
+
+.pics-deco {
+  width: 75px;
+  height: auto;
+  
+}
+
+/* ---------- The Cool Film Strip ---------- */
+.film-strip {
+  width: 100vw;
+  background: #000;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+  /* Added a slight perspective tilt for a "3D" look */
+  transform: rotate(-1deg); 
+  box-shadow: 0 0 50px rgba(137, 49, 237, 0.2);
+  border-top: 2px solid #8931ed;
+  border-bottom: 2px solid #8931ed;
+}
+
+/* Custom Skinny Perforations (The Gradient Method) */
+.film-strip::before,
+.film-strip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(to right, #8931ED 85%, transparent 15%);
+  background-size: 50px 100%;
+}
+.film-strip::before { top: 12px; }
+.film-strip::after { bottom: 12px; }
+
+/* ... Keep your existing styles above ... */
+
+.film-track {
+  display: flex;
+  /* Use CSS variables to make math easier */
+  --img-width: 300px;
+  --gap: 20px;
+  /* (8 images * width) + (8 gaps) */
+  --scroll-dist: calc((var(--img-width) * 8) + (var(--gap) * 8));
+  
+  width: max-content; 
+  gap: var(--gap);
+  animation: scroll 35s linear infinite;
+  padding: 20px 0;
+}
+
+.film-track img {
+  width: var(--img-width);
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid #111;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(40%) brightness(0.8);
+}
+
+/* ---------- Responsive Adjustments ---------- */
+
+@media (max-width: 1024px) {
+  .title-group {
+    gap: 40px;
+  }
+  .film-title {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .film-content {
+    margin-top: -50px;
+    padding: 40px 0;
+  }
+
+  .title-group {
+    gap: 20px;
+  }
+
+  .film-title {
+    width: 200px;
+  }
+
+  .pics-deco {
+    width: 50px;
+  }
+
+  /* Shrink the film strip for mobile */
+  .film-track {
+    --img-width: 200px;
+    --gap: 15px;
+  }
+
+  .film-track img {
+    height: 140px;
+  }
+
+  .film-strip::before,
+  .film-strip::after {
+    background-size: 30px 100%; /* Smaller perforations */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hide side icons if screen is too narrow or stack them */
+  .pics-deco {
+    display: none; 
+  }
+
+  .film-track {
+    --img-width: 160px;
+    --gap: 10px;
+  }
+
+  .film-track img {
+    height: 110px;
+  }
+}
+
+/* ---------- Updated Seamless Animation ---------- */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { 
+    /* This now uses the variable defined in .film-track */
+    transform: translateX(calc(-1 * var(--scroll-dist))); 
+  }
+}
+
+/* Pause animation on hover for better UX */
+.film-track:hover {
+  animation-play-state: paused;
+}
+
+/* COOL HOVER EFFECT */
+.film-track img:hover {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.1) rotate(2deg);
+  border-color: #8931ed;
+  box-shadow: 0 0 20px rgba(137, 49, 237, 0.8);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* ---------- Seamless Animation ---------- */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { 
+    /* Move by exactly 8 images (300px) + 8 gaps (20px) = 2560px */
+    transform: translateX(-2560px); 
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* ---------- Footer ---------- */
+.omc-footer {
+  width: 100%;
+  margin-top: auto;
+ 
+}
+
+.footer-img {
+  width: 100%;
+  display: block;
+}
