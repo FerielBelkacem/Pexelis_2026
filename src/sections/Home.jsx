@@ -6,10 +6,7 @@ export default function Home({ setActive }) {
     <div className="window-content home-page">
       <img src={heroTitle} alt="Hero Title" className="hero-img" />
 
-      <div
-        className="start-btn"
-        onClick={() => setActive("about")}
-      >
+      <div className="start-btn" onClick={() => setActive("about")}>
         <img src={button} alt="Start Button" />
       </div>
     </div>

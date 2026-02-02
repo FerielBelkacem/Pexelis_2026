@@ -1,4 +1,4 @@
-import footeromc from "../assets/background/foot.png";
+import footeromc from "../assets/background/Foot.png";
 import alien2 from "../assets/sposnsors/alien.png";
 import squid from "../assets/sposnsors/squid.png";
 import fb from "../assets/socialMedia/facebook.png";

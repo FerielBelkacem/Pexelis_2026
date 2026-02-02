@@ -12,7 +12,7 @@ export default function Discord() {
   useEffect(() => {
     getLeaderboard()
       .then(setLeaderboardData)
-      .catch(err => setError(err.message))
+      .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
 
@@ -28,15 +28,17 @@ export default function Discord() {
 
           <div className="table-scroll-wrapper">
             {loading && (
-                <div className="pexelis-loading">
-                  <div className="terminal">
-                    <p>$ initializing pexelis leaderboard...</p>
-                    <p>$ fetching team scores<span className="dots"></span></p>
-                    <p>$ ranking teams...</p>
-                    <p className="cursor">█</p>
-                  </div>
+              <div className="pexelis-loading">
+                <div className="terminal">
+                  <p>$ initializing pexelis leaderboard...</p>
+                  <p>
+                    $ fetching team scores<span className="dots"></span>
+                  </p>
+                  <p>$ ranking teams...</p>
+                  <p className="cursor">█</p>
                 </div>
-          )}
+              </div>
+            )}
 
             {error && <p className="error">{error}</p>}
 
