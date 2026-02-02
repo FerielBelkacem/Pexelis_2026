@@ -1,8 +1,8 @@
 import spons from "../assets/sposnsors/ourspons.png";
 import footeromc from "../assets/background/Foot.png";
-import shap1 from "../assets/sposnsors/shape 1.png";
-import shap2 from "../assets/sposnsors/shape 2.png";
-import shap3 from "../assets/sposnsors/shape 3.png";
+import shap1 from "../assets/sposnsors/Shape 1.png";
+import shap2 from "../assets/sposnsors/Shape 2.png";
+import shap3 from "../assets/sposnsors/Shape 3.png";
 import desp1 from "../assets/sposnsors/despShape1.png";
 import desp2 from "../assets/sposnsors/despShape2.png";
 import desp3 from "../assets/sposnsors/despShape3.png";
