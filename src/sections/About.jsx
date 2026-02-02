@@ -17,7 +17,7 @@ import aboutus from "../assets/about deco/aboutus.png";
 import aboutBg from "../assets/background/v.png";
 import linuks from "../assets/about deco/linuks.png";
 import omctag from "../assets/about deco/omctag.png";
-import footeromc from "../assets/background/foot.png";
+import footeromc from "../assets/background/Foot.png";
 export default function About() {
   return (
     <div className="about-page">
