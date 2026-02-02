@@ -8,7 +8,7 @@ import pic5 from "../assets/pictures/5.png";
 import pic6 from "../assets/pictures/6.png";
 import pic7 from "../assets/pictures/7.png";
 import pic8 from "../assets/pictures/1.png";
-import title from "../assets/pictures/title.png";
+import title from "../assets/pictures/Title.png";
 // Your new CSS file
 /* Import your club images here */
 // import img1 from "../assets/pics/club1.png"
