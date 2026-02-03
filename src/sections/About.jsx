@@ -5,6 +5,8 @@ import "../Style/variables.css";
 import "../assets/Fonts/WEB/css/clash-display.css";
 import phase1 from "../assets/about deco/Phase1.png";
 import phase2 from "../assets/about deco/Phase2.png";
+import phase1sm from "../assets/about deco/Phase1sm.png";
+import phase2sm from "../assets/about deco/Phase2sm.png";
 import phas1icon from "../assets/about deco/phas1.svg";
 import phas2icon from "../assets/about deco/phas2.svg";
 import ready from "../assets/about deco/T4.png";
@@ -85,9 +87,20 @@ export default function About() {
             <div className="phase-icon-wrapper phase1-icon">
               <img src={phas1icon} alt="Phase 1 Icon" className="phase-icon" />
             </div>
-            {/* Image de fond */}
+            {/* Image de fond - version responsive avec CSS */}
             <div className="phase-image-container">
-              <img src={phase1} className="phase-bg-image" alt="Phase 1" />
+              {/* Image desktop (visible sur desktop) */}
+              <img 
+                src={phase1} 
+                className="phase-bg-image desktop" 
+                alt="Phase 1" 
+              />
+              {/* Image mobile (visible sur mobile) */}
+              <img 
+                src={phase1sm} 
+                className="phase-bg-image mobile" 
+                alt="Phase 1" 
+              />
               {/* Texte sur l'image */}
               <div className="phase-overlay-text">
                 <h3 className="phase-title">Phase 1 : UI/UX Design Challenge (2 Days)</h3>
@@ -111,9 +124,20 @@ export default function About() {
             <div className="phase-icon-wrapper phase2-icon">
               <img src={phas2icon} alt="Phase 2 Icon" className="phase-icon" />
             </div>
-            {/* Image de fond */}
+            {/* Image de fond - version responsive avec CSS */}
             <div className="phase-image-container">
-              <img src={phase2} className="phase-bg-image" alt="Phase 2" />
+              {/* Image desktop (visible sur desktop) */}
+              <img 
+                src={phase2} 
+                className="phase-bg-image desktop" 
+                alt="Phase 2" 
+              />
+              {/* Image mobile (visible sur mobile) */}
+              <img 
+                src={phase2sm} 
+                className="phase-bg-image mobile" 
+                alt="Phase 2" 
+              />
               {/* Texte sur l'image */}
               <div className="phase-overlay-text">
                 <h3 className="phase-title">Phase 2 : Development Challenge (2 Days)</h3>

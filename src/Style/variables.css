@@ -296,7 +296,7 @@
 }
 
 .decor.key {
-  top: 2150px;
+  top: 2050px;
   right: 180px;
   width: 280px;
   max-width: 40vw;
@@ -527,26 +527,22 @@
 
 /* ========== MOBILE STYLES (768px et moins) ========== */
 @media (max-width: 768px) {
-  /* Container principal */
   .about-page {
     width: 100%;
     padding: 0;
     overflow-x: hidden;
   }
 
-  /* Contenu principal */
   .about-content {
     padding: 0 16px !important;
-    gap: 40px;
+    gap: 30px !important; /* Réduit de 40px à 30px */
     max-width: 100%;
   }
 
-  /* Images décoratives - réduites et repositionnées */
   .about-decorations {
     display: none;
   }
 
-  /* Gardez seulement quelques éléments importants */
   .about-decorations .aboutus,
   .about-decorations .omc {
     display: block;
@@ -564,10 +560,9 @@
     right: 20px !important;
   }
 
-  /* Image du haut */
   .top-img-wrapper {
     padding: 0 !important;
-    margin-bottom: 20px; /* Réduit */
+    margin-bottom: 10px !important; /* Réduit de 20px */
   }
 
   .top-img {
@@ -575,12 +570,12 @@
     max-width: 280px;
     margin: 0 auto;
     opacity: 0.5;
+    margin-bottom: -60px !important; /* Réduit sur mobile */
   }
 
-  /* Titres */
   .about-title {
     text-align: center;
-    margin-bottom: 15px; /* Réduit */
+    margin-bottom: 10px !important; /* Réduit de 15px */
   }
 
   .about-title img {
@@ -592,40 +587,40 @@
   .what-pexiles {
     position: relative !important;
     top: auto !important;
-    margin-bottom: 15px; /* Réduit */
+    margin-bottom: 10px !important; /* Réduit */
   }
 
-  /* Textes */
   .about-text,
   .Ready-text {
     font-size: 1.1rem !important;
-    line-height: 1.5; /* Réduit */
+    line-height: 1.5;
     padding: 0 8px;
     text-align: center;
     max-width: 100% !important;
+    margin-top: 0 !important; /* Force à 0 */
   }
 
   .about-text {
     font-size: 1.2rem !important;
-    margin-top: 20px; /* Réduit de 26px */
+    margin-top: 10px !important; /* Réduit de 20px */
   }
 
-  /* Mots en surbrillance */
   .design,
   .dev {
-    padding: 2px 6px; /* Réduit */
+    padding: 2px 6px;
     margin: 0 2px;
     display: inline-block;
-    font-size: 1rem; /* Réduit */
+    font-size: 1rem;
   }
 
   /* ========== PHASES SECTION - MOBILE ========== */
   .phases {
     display: flex;
     flex-direction: column;
-    gap: 0px; /* Réduit de 40px à 30px */
+    gap: 20px !important; /* Réduit de 0px à 20px */
     align-items: center;
-    margin-top: 20px; /* Ajouté pour réduire l'espace au-dessus */
+    margin-top: 10px !important; /* Réduit de 20px */
+    margin-bottom: 10px !important; /* Ajouté pour réduire l'espace en bas */
   }
 
   .phase-card {
@@ -637,76 +632,73 @@
     background: none !important;
     border-radius: 12px;
     padding: 0;
+    margin-bottom: 10px !important; /* Réduit */
   }
 
   .phase-overlay-text {
     position: absolute;
-    top: 20px; /* Réduit de 22px */
-    left: 20px; /* Position gauche sur mobile */
-    padding: 15px; /* Réduit de 20px */
+    top: 42px !important; /* Réduit de 20px */
+    left: 42px !important;
+    padding: 10px !important; /* Réduit de 15px */
     color: white;
     text-align: left;
     max-width: 80%;
   }
 
+
   .phase-title {
     font-family: "Clash Display";
-    font-size: 1rem; /* Augmenté de 0.8rem */
+    font-size: 0.9rem !important; /* Réduit de 1rem */
     font-weight: 600;
     color: white;
-    margin-bottom: 10px;
-    line-height: 1.3;
+    margin-bottom: 5px !important; /* Réduit de 10px */
+    line-height: 1.2;
   }
 
   .phase-description {
     font-family: "Clash Display";
-    font-size: 0.9rem; /* Augmenté de 0.7rem */
+    font-size: 0.8rem !important; /* Réduit de 0.9rem */
     opacity: 0.9;
     margin: 0;
   }
 
   .phase-icon-wrapper {
-    top: 20px; /* Réduit de 22px */
-    left: 40px; /* Réduit de 44px */
+    top: 32px !important; /* Réduit de 20px */
+    left: 46px !important; /* Réduit de 40px */
     padding: 0;
-    transform: none; /* Supprimé pour mobile */
+    transform: none;
   }
 
   .phase-icon {
-    width: 25px; /* Augmenté de 22px */
-    height: 25px;
+    width: 20px !important; /* Réduit de 25px */
+    height: 20px;
   }
 
-  /* Points list mobile */
   .phase-points-list {
-    margin: 10px 0 0 0;
-    gap: 8px;
+    margin: 8px 0 0 0 !important; /* Réduit de 10px */
+    gap: 5px !important; /* Réduit de 8px */
   }
 
   .phase-point {
-    font-size: 0.85rem; /* Taille adaptée */
-    gap: 6px;
+    font-size: 0.75rem !important; /* Réduit de 0.85rem */
+    gap: 4px !important; /* Réduit de 6px */
   }
 
   .point-bullet {
-    font-size: 1.2rem; /* Réduit */
+    font-size: 1rem !important; /* Réduit de 1.2rem */
   }
 
-  /* CTA section */
-  .cta {
-    text-align: center;
-    margin-top: 30px; /* Réduit de 40px */
+
+
+  .Ready-text {
+    margin-top: 5px !important; /* Ajouté pour réduire l'espace */
+    margin-bottom: 5px !important; /* Ajouté */
   }
 
-  .cta .about-title {
-    margin-bottom: 15px; /* Réduit */
-  }
-
-  /* Logo OMC */
   .omc-logo {
     width: 100%;
-    max-width: 200px; /* Réduit */
-    margin: 30px auto 15px !important; /* Réduit */
+    max-width: 180px !important; /* Réduit de 200px */
+    margin: 15px auto 10px !important; /* Réduit de 30px auto 15px */
     display: block;
   }
 
@@ -715,43 +707,54 @@
   }
 
   .about-section {
-    gap: 15px; /* Réduit de 20px */
-    margin-bottom: 30px; /* Réduit de 40px */
-    margin-top: -30px; /* Réduit de -40px */
+    gap: 10px !important; /* Réduit de 15px */
+    margin-bottom: 15px !important; /* Réduit de 30px */
+    margin-top: -15px !important; /* Réduit de -30px */
+  }
+
+  /* ========== FOOTER - MOBILE ========== */
+  .footer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px !important; /* Réduit de 20px */
   }
 }
 
 /* ========== VERY SMALL DEVICES (480px et moins) ========== */
 @media (max-width: 480px) {
   .about-content {
-    padding: 0 12px !important;
-    gap: 25px; /* Réduit de 30px */
+    padding: 0 10px !important; /* Réduit de 12px */
+    gap: 20px !important; /* Réduit de 25px */
   }
 
   .about-text {
-    font-size: 1rem !important; /* Réduit de 1.1rem */
+    font-size: 1rem !important;
     line-height: 1.4;
   }
 
   .Ready-text {
-    font-size: 0.95rem !important; /* Réduit de 1rem */
+    font-size: 0.9rem !important; /* Réduit de 0.95rem */
     line-height: 1.4;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
   }
 
   .design,
   .dev {
-    font-size: 0.95rem; /* Réduit */
-    padding: 1px 4px; /* Réduit */
+    font-size: 0.9rem; /* Réduit de 0.95rem */
+    padding: 1px 4px;
   }
 
   .about-title img {
-    max-width: 220px; /* Réduit de 250px */
+    max-width: 200px !important; /* Réduit de 220px */
   }
 
   /* ========== PHASES SECTION - VERY SMALL ========== */
   .phases {
-    gap: 20px; /* Réduit de 0px */
-    margin-top: 15px;
+    gap: 15px !important; /* Réduit de 20px */
+    margin-top: 5px !important; /* Réduit de 15px */
+    margin-bottom: 5px !important;
   }
 
   .phase-card {
@@ -759,92 +762,99 @@
   }
 
   .phase-overlay-text {
-    top: 15px;
-    left: 15px;
-    padding: 12px;
+    top: 32px !important; /* Réduit de 15px */
+    left: 32px !important;
+    padding: 8px !important; /* Réduit de 12px */
     max-width: 85%;
   }
 
   .phase-title {
-    font-size: 0.9rem; /* Réduit de 1rem */
-    margin-bottom: 8px;
+    font-size: 0.8rem !important; /* Réduit de 0.9rem */
+    margin-bottom: 3px !important; 
   }
 
   .phase-description {
-    font-size: 0.8rem; /* Réduit de 0.9rem */
+    font-size: 0.7rem !important; /* Réduit de 0.8rem */
   }
 
   .phase-icon-wrapper {
-    top: 15px;
-    left: 30px;
+    top: 22px !important;
+    left: 42px !important; /* Réduit de 30px */
   }
 
   .phase-icon {
-    width: 22px;
-    height: 22px;
+    width: 18px !important; /* Réduit de 22px */
+    height: 18px;
   }
 
-  /* Points list très petit */
   .phase-points-list {
-    gap: 6px;
+    gap: 4px !important; /* Réduit de 6px */
+    margin: 6px 0 0 0 !important;
   }
 
   .phase-point {
-    font-size: 0.8rem;
-    gap: 5px;
+    font-size: 0.7rem !important; /* Réduit de 0.8rem */
+    gap: 3px !important; /* Réduit de 5px */
   }
 
   .point-bullet {
-    font-size: 1rem;
+    font-size: 0.9rem !important; /* Réduit de 1rem */
   }
 
   .top-img {
-    max-width: 220px; /* Réduit de 250px */
+    max-width: 200px !important; /* Réduit de 220px */
+    margin-bottom: -50px !important; /* Réduit encore */
   }
 
   .omc-logo {
-    max-width: 180px; /* Réduit de 200px */
-    margin: 25px auto 10px !important; /* Réduit */
+    max-width: 150px !important; /* Réduit de 180px */
+    margin: 10px auto 5px !important; /* Réduit de 25px auto 10px */
   }
 
   .about-decorations .decor {
-    width: 50px !important; /* Réduit de 60px */
+    width: 40px !important; /* Réduit de 50px */
+  }
+
+
+  .footer-img {
+    margin-top: 5px !important; /* Réduit de 15px */
   }
 }
 
 /* ========== TABLET STYLES (769px à 1024px) ========== */
 @media (min-width: 769px) and (max-width: 1024px) {
   .about-content {
-    padding: 0 8% !important; /* Réduit de 10% */
+    padding: 0 8% !important;
+    gap: 60px !important; /* Réduit de 80px */
   }
 
   .about-text {
-    font-size: 1.4rem !important; /* Réduit de 1.5rem */
+    font-size: 1.4rem !important;
   }
 
   .Ready-text {
-    font-size: 1.2rem !important; /* Réduit de 1.3rem */
+    font-size: 1.2rem !important;
   }
 
   .decor {
-    width: 70px; /* Réduit de 80px */
+    width: 70px;
   }
 
   .decor.key {
-    width: 180px; /* Réduit de 200px */
-    right: 150px; /* Réduit de 200px */
+    width: 180px;
+    right: 150px;
   }
 
   .decor.execution {
-    left: 300px; /* Réduit de 400px */
+    left: 300px;
   }
 
   .phases {
-    gap: 50px; /* Réduit de 60px */
+    gap: 30px !important; /* Réduit de 50px */
   }
 
   .phase-card {
-    min-height: 300px; 
+    min-height: 280px; /* Réduit de 300px */
   }
 }
 
@@ -891,18 +901,58 @@
   width: 100%;
   height: auto;
   display: block;
-  margin-top: 30px; /* Réduit de 40px */
+  margin-top: 20px; /* Réduit de 30px */
 }
 
+/* ========== RESPONSIVE PHASE IMAGES ========== */
+
+/* Par défaut : version desktop visible, version mobile cachée */
+.phase-bg-image.desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.phase-bg-image.mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Sur mobile : version desktop cachée, version mobile visible */
 @media (max-width: 768px) {
-  .footer-img {
-    margin-top: 20px; /* Réduit sur mobile */
+
+  
+  /* Ajustements pour les images mobiles */
+  .phase-image-container {
+    min-height: 220px !important;
+  }
+  
+  .phase-bg-image.mobile {
+    object-fit: contain !important;
+    max-height: 220px !important;
   }
 }
 
+/* Pour les très petits écrans */
 @media (max-width: 480px) {
-  .footer-img {
-    margin-top: 15px; /* Réduit encore sur très petit */
+    .phase-bg-image.desktop {
+    display: none !important;
+  }
+  
+  .phase-bg-image.mobile {
+    display: block !important;
+  }
+  .phase-bg-image.mobile {
+    max-height: 200px !important;
+  }
+  
+  .phase-image-container {
+    min-height: 200px !important;
   }
 }
 
