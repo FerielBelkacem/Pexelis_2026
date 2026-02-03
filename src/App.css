@@ -8,6 +8,7 @@
 .app {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   /* Supprimez justify-content: center; */
 }
 
@@ -39,6 +40,8 @@
   position: relative;
   z-index: 1;
   margin-left: 260px; /* ← Laisse de l'espace pour la sidebar */
+  padding-bottom: 200px;
+  overflow-y: auto;
   min-height: 100vh;
 }
 
@@ -46,7 +49,7 @@
 .footer-bottom {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 0;5
   width: 100%;
   z-index: 0;
   pointer-events: none;
@@ -56,7 +59,7 @@
   width: 100%;
   height: auto;
   display: block;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 /* Overlay pour mobile */
@@ -130,11 +133,6 @@
     left: auto;
     transform: none;
   }
-  
-  /* Cache le footer sur mobile */
-  .footer-bottom {
-    display: none;
-  }
 }
 
 @media (min-width: 769px) {
@@ -166,16 +164,6 @@
   /* Ajoutez des styles spécifiques si nécessaire */
   max-height: 150px; /* Limitez la hauteur si besoin */
   object-fit: contain; /* Assure que l'image ne s'étire pas */
-}
-
-/* Pour les petits écrans, assurez-vous que le footer est toujours visible */
-@media (max-width: 768px) {
-  .footer-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000; /* Assurez-vous qu'il est au-dessus de tout */
-  }
 }
 
 /* Ajustez le z-index du popup mobile pour qu'il soit au-dessus du footer */
@@ -232,10 +220,7 @@
   min-height: 100vh;
 }
 
-/* Assurez-vous que le footer ne couvre pas le logo */
-.footer-bottom {
-  z-index: 0; /* Gardez un z-index bas pour le footer */
-}
+/* Assurez-vous que le footer ne couvre pas le logo - footer z-index is managed above */
 
 /* Ajustements pour les très grands écrans */
 @media (min-width: 1400px) {
