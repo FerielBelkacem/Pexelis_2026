@@ -2,12 +2,14 @@ import agendaTitle from "../assets/agenda/T1.png"
 import designPhase from "../assets/agenda/designPhase.png"
 import day1 from "../assets/agenda/day1.svg"
 import day2 from "../assets/agenda/day2.svg"
-import day3 from "../assets/agenda/day3.png"
-import day4 from "../assets/agenda/day4.png"
+import day3 from "../assets/agenda/day3.svg"
+import day4 from "../assets/agenda/day4.svg"
 import BigFooter from "../assets/agenda/OMC F.svg"
 import devPhase from "../assets/agenda/devPhase.png"
-import agendaicon1 from "../assets/agenda/agendaicon1.svg"
-import topday2 from "../assets/agenda/topday2.svg"
+import agendaicon1 from "../assets/agenda/agendaicon11.svg"
+import agendaicon2 from "../assets/agenda/agendaicon12.svg"
+import agendaicon3 from "../assets/agenda/agendaicon21.svg"
+import agendaicon4 from "../assets/agenda/agendaicon22.svg"
 import "../Style/agenda.css"
 
 export default function Agenda() {
@@ -41,13 +43,6 @@ export default function Agenda() {
           <div className="phase-main days-row">
             <img src={day1} className="day-card" alt="Day 1" />
           </div>
-
-          <div className="phase-main">
-              {/* Icône à l'extrême droite */}
-              <div className="phase-icon-right">
-                <img src={topday2} className="top-day2" alt="Top Day 2" /> 
-              </div>
-            </div>
            
           <div className="day2">
             <img src={day2} className="day-card2" alt="Day 2" />
@@ -59,16 +54,22 @@ export default function Agenda() {
           </div>
 
           {/* DEV PHASE SECTION */}
-          <div className="phase-row dev-phase">
+          <div className="phase-row design-phase">
             <div className="phase-sidebar">
-              <img src={devPhase} className="phase-img" alt="Dev Phase" />
+              <img src={devPhase} className="phase-img" alt="Design Phase" />
             </div>
             
             <div className="phase-main">
+              {/* Icône à l'extrême droite */}
+              <div className="phase-icon-right">
+                <img src={agendaicon3} className="phase-img2" alt="Day 1" />
+              </div>
+            </div>
+          </div>
+          <div className="phase-main">
               <img src={day3} className="day-card" alt="Day 3" />
               <img src={day4} className="day-card2" alt="Day 4" />
             </div>
-          </div>
         </div>
 
         <img src={BigFooter} className="footer-img" alt="OMC Footer" />
