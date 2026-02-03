@@ -21,3 +21,9 @@
 .vscode-sidebar ul { list-style: none; padding-left: 10px; }
 .vscode-sidebar li { margin: 4px 0; font-size: 12px; }
 .vscode-editor { flex: 1; }
+
+@media screen and (max-width: 768px) {
+  .vscode-sidebar {
+    width: 20%;
+  }
+}
