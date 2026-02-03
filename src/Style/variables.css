@@ -1604,6 +1604,8 @@
   box-shadow: 0 0 50px rgba(137, 49, 237, 0.2);
   border-top: 2px solid #8931ed;
   border-bottom: 2px solid #8931ed;
+  contain: layout paint;
+  content-visibility: auto;
 }
 
 /* Custom Skinny Perforations (The Gradient Method) */
@@ -1634,6 +1636,9 @@
   gap: var(--gap);
   animation: scroll 35s linear infinite;
   padding: 20px 0;
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout paint;
 }
 
 .film-track img {
@@ -1644,6 +1649,9 @@
   border-radius: 4px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   filter: grayscale(40%) brightness(0.8);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  opacity: 0.85;
 }
 
 /* ---------- Responsive Adjustments ---------- */
