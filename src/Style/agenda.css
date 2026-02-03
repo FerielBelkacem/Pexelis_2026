@@ -1,5 +1,4 @@
 .agenda-page {
- 
   color: white;
   display: flex;
   flex-direction: column;
@@ -26,7 +25,7 @@
 }
 
 .sprint-subtitle {
-  font-size: clamp(1.2rem, 5vw, 2rem); /* Scales between 1.2rem and 2rem */
+  font-size: clamp(1.2rem, 5vw, 2rem);
   font-weight: 300;
   margin: 10px 0;
   letter-spacing: 2px;
@@ -39,10 +38,7 @@
   font-weight: 300;
   margin-bottom: 5px;
   display: inline-block;
-  
 }
-
-
 
 .timeline-wrapper::before {
   content: "";
@@ -51,12 +47,9 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(123, 47, 247, 0.4), transparent);
   transform: translateX(-50%);
   z-index: 0;
 }
-
-
 
 .phase-sidebar {
   display: flex;
@@ -64,51 +57,76 @@
 }
 
 .phase-img {
-  width: 100%; /* Responsive to column width */
+  width: 100%;
   max-width: 200px;
   height: auto;
   object-fit: contain;
+}
+
+.phase-img2 {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* DAY 2 CONTAINER - CENTRÉ */
+.day2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* DAY-CARD2 - CENTRÉ PAR DÉFAUT */
+.day-card2 {
+  width: 100%;
+  max-width: 850px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeline-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* Reduced gap from 100px/60px to 20px - this handles the overall section spacing */
-  gap: 20px; 
+  gap: 20px;
   position: relative;
 }
 
 .phase-row {
   display: grid;
-  grid-template-columns: 200px 1fr; 
+  grid-template-columns: 200px 1fr;
   width: 100%;
   z-index: 1;
   align-items: flex-start;
-  /* Reduced margin-bottom from 40px to 10px */
   margin-bottom: 10px;
+  position: relative; /* Pour phase-img2 position: absolute */
 }
 
-/* This is the "{ }" icon or space between the two phases */
 .phase-divider {
   width: 100%;
   display: flex;
   justify-content: center;
-  /* Reduced vertical margin from 40px/20px to 10px */
   margin: 10px 0;
   color: #00f2ff;
   font-size: clamp(1.5rem, 6vw, 2.5rem);
   font-weight: bold;
   z-index: 1;
-  line-height: 1; /* Ensures no extra height from line height */
+  line-height: 1;
 }
 
 .phase-main {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  /* Space between Day 1 and Day 2 remains 60px (change if needed) */
-  gap: 60px; 
+  align-items: center;
+  gap: 60px;
 }
 
 .day-card, .day-card2 {
@@ -117,13 +135,30 @@
   height: auto;
 }
 
-/* On desktop, keep your specific 230px alignment */
+
+/* SUPPRIMEZ CE BLOC COMPLET */
+/* Il cause le problème de décalage */
+/*
 @media (min-width: 951px) {
   .day-card2 {
     margin-right: 230px; 
   }
 }
+*/
 
+/* À LA PLACE, créez un style spécifique pour day4 seulement */
+@media (min-width: 951px) {
+  /* Pour day4 seulement dans la phase dev-phase */
+  .dev-phase .day-card2 {
+    margin-right: 230px;
+  }
+  
+  /* Pour day2 dans le conteneur .day2, on le centre */
+  .day2 .day-card2 {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 
 .footer-img {
   width: 100%;
@@ -137,37 +172,49 @@
   .agenda-page {
     padding: 40px 15px;
   }
- .agenda-title{
-  width: 264px;
- }
+  
+  .agenda-title {
+    width: 264px;
+  }
+  
   .phase-row {
-    grid-template-columns: 1fr; /* Stack Phase above Cards */
     gap: 20px;
     justify-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .phase-sidebar {
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .phase-img {
-    max-width: 140px; /* Smaller labels on mobile */
+    max-width: 140px;
+  }
+
+  .phase-img2 {
+    position: static;
+    display: block;
   }
 
   .day-card2 {
-    margin-right: 0; /* Remove the offset so it centers on mobile */
+    margin-right: 0;
   }
 
   .phase-main {
-    gap: 30px; /* Tighter spacing on mobile */
+    gap: 30px;
   }
+  
   .timeline-wrapper {
     gap: 15px;
   }
 
   .timeline-wrapper::before {
-    left: 50%; /* Keep line centered */
+    left: 50%;
+  }
+  
+  /* Pour mobile, tous les day-card2 sont centrés */
+  .dev-phase .day-card2 {
+    margin-right: 0;
   }
 }
