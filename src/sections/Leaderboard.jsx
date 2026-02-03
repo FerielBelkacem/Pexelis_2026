@@ -14,6 +14,7 @@ export default function Discord() {
       .then(setLeaderboardData)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
+       console.log("ENV CHECK", import.meta.env.VITE_SHEET_ID)
   }, []);
 
   return (
@@ -50,8 +51,6 @@ export default function Discord() {
                     <th>Team Name</th>
                     <th>Phase1</th>
                     <th>Phase2</th>
-                    <th>Phase3</th>
-                    <th>Phase4</th>
                     <th>Total Points</th>
                   </tr>
                 </thead>
@@ -67,8 +66,6 @@ export default function Discord() {
                       <td>{row.team}</td>
                       <td>{row.d1}</td>
                       <td>{row.d2}</td>
-                      <td>{row.d3}</td>
-                      <td>{row.d4}</td>
                       <td>{row.total}</td>
                     </tr>
                   ))}

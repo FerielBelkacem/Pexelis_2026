@@ -26,23 +26,28 @@
 
 
 
+
+
 @media (max-width: 768px) {
   body {
     align-items: stretch;
   }
 
   .window {
-    position: relative;   /* 🔁 cancel absolute */
+    position: relative;
     top: auto;
     left: auto;
     transform: none;
-
-    width: 100vw;
+    
+    width: calc(100vw - 40px); /* ← Espace à droite */
+    margin-right: 40px; /* ← Ou cette ligne */
+    
     height: 100vh;
-    max-width: 100vw;
+    max-width: calc(100vw - 40px);
     max-height: 100vh;
     border-radius: 0;
   }
+
 
   
 
@@ -102,7 +107,15 @@
 
 
 /* ---------- controls ---------- */
+.controls {
+  display: flex;
+  align-items: center;
+}
+
 .controls span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
   cursor: pointer;
   opacity: 0.7;

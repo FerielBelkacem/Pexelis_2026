@@ -1,3 +1,4 @@
+import { Minus, Square, X } from 'lucide-react';
 import Home from "../../sections/Home"; 
 import Picture from "../../sections/Picture"; 
 import About from "../../sections/About"; 
@@ -18,9 +19,9 @@ export default function Window({ active, setActive, onClose, isMobile }) {
       <div className="title-bar">
         <div className="title"></div>
         <div className="controls">
-          <span>—</span>
-          <span>□</span>
-          <span className="close" onClick={onClose}>×</span>
+          <span className="close" onClick={onClose}><Minus size={19} /></span>
+          <span className="cari"><Square  size={15} /></span>
+          <span className="close" onClick={onClose}><X size={18} /></span>
         </div>
       </div>
 
@@ -29,8 +30,8 @@ export default function Window({ active, setActive, onClose, isMobile }) {
         {active === "home" && <Home setActive={setActive} />}
         {active === "picture" && <Picture />}
         {active === "about" && <About />}
-        {/*{active === "password" && <Leaderboard />}*/}
-        {active === "password" && <Close />}
+        {active === "password" && <Leaderboard />}
+        {/*{active === "password" && <Close />}*/}
         {/*{active === "sponsors" && <Sponsors />}*/}
         {active === "sponsors" && <Close />}
         {active === "agenda" && <Agenda />}

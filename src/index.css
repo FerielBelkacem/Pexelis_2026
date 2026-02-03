@@ -40,18 +40,19 @@ body {
 
 @media (max-width: 768px) {
   body {
-
     padding-right: 20px;
     background-image:
       url("./assets/decorations/Group 288743.svg"), /* TOP */
       url("./assets/background/background.svg");   /* BOTTOM */
 
     background-size:
-      auto 80%,   /* PNG size (NOT full) */
+      auto 70%,   /* PNG size (NOT full) */
       cover;
 
+    /* Avant : right center */
+    /* Après : décalé vers la gauche */
     background-position:
-      right center, /* ← THIS is the key */
+      calc(100% - 30px) center, /* ← PLUS VERS LA GAUCHE */
       center;
 
     background-repeat:
@@ -59,9 +60,6 @@ body {
       no-repeat;
   }
 }
-
-
-
 
 @media (max-width: 768px) {
   body {

@@ -12,16 +12,16 @@ import discord from "../assets/icons/discord.png";
 
 export const desktopItems = [
   { id: "home", label:"Home",  icon: home },
-  { id: "picture", label:"Pictures", icon: picture },
-  /*{ id: "password",label: "leaderboard", icon: leaderboard },*/
-  { id: "password",label: "leaderboard", icon: password },
-  { id: "figma",label: "Figma", icon: figma },
   { id: "about", label: "About",icon: about },
-  { id: "vscode", label: "VS code",icon: vscode },
   /*{ id: "agenda",label: "Agenda", icon: password },*/
   { id: "agenda",label: "Agenda", icon: agenda },
-  { id: "omc",  label: "Contact",icon: omc },
+  /*{ id: "password",label: "leaderboard", icon: leaderboard },*/
+  { id: "password",label: "leaderboard", icon: password },
   { id: "sponsors",label: "Sponsors", icon: password },
   /*{ id: "sponsors", label: "Sponsors",icon: sponsors },*/
+  { id: "omc",  label: "Contact",icon: omc },
+  { id: "picture", label:"Pictures", icon: picture },
+  { id: "figma",label: "Figma", icon: figma },
+  { id: "vscode", label: "VS code",icon: vscode },
   { id: "discord", label: "Discord",icon: discord }, 
 ];
