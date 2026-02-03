@@ -101,18 +101,20 @@
   .app {
     flex-direction: column;
     overflow-x: hidden;
+    width: 100vw;
   }
   
   .sidebar-container {
-    width: 100%;
-    padding: 20px;
+    width: 100vw;
+    padding: 0;
     overflow-x: hidden;
+    position: fixed;
   }
   
 .sidebar {
-  width: 140px;
+  width: 100vw;
   height: 93vh;
-  padding: 28px;
+  padding: 20px 15px 10% 15px;
   overflow: auto;
   overflow-x: hidden;
    

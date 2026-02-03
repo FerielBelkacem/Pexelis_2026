@@ -40,7 +40,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-right: 20px;
+    padding-right: 0;
     background-image:
       url("./assets/decorations/Group 288743.svg"), /* TOP */
       url("../public/background.svg");   /* BOTTOM */
