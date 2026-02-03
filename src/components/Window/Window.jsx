@@ -13,15 +13,47 @@ import OMC from "../../sections/OMC";
 import "./Window.css"
 
 export default function Window({ active, setActive, onClose, isMobile }) {
+  
+  const handleControlClick = (action) => {
+    switch(action) {
+      case 'minimize':
+        console.log("Minimiser");
+        // Vous pouvez ajouter une logique de minimisation ici
+        break;
+      case 'maximize':
+        console.log("Agrandir/Réduire");
+        // Vous pouvez ajouter une logique d'agrandissement ici
+        break;
+      case 'close':
+        if (onClose) {
+          onClose(); // Appelle la fonction de fermeture passée par App.js
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className={`window ${isMobile ? 'mobile' : ''}`}>
       {/* title bar */}
       <div className="title-bar">
         <div className="title"></div>
         <div className="controls">
-          <span className="close" onClick={onClose}><Minus size={19} /></span>
-          <span className="cari"><Square  size={15} /></span>
-          <span className="close" onClick={onClose}><X size={18} /></span>
+          {/* Bouton minimiser */}
+          <span className="minimize" onClick={() => handleControlClick('minimize')}>
+            <Minus size={19} />
+          </span>
+          
+          {/* Bouton agrandir */}
+          <span className="cari" onClick={() => handleControlClick('maximize')}>
+            <Square size={15} />
+          </span>
+          
+          {/* Bouton fermer */}
+          <span className="close" onClick={() => handleControlClick('close')}>
+            <X size={18} />
+          </span>
         </div>
       </div>
 

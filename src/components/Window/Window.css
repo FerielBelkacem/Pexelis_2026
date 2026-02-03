@@ -130,3 +130,16 @@
 .controls .close {
   color: #eeeeee;
 }
+
+/* Ajoutez ces styles pour les classes des boutons */
+.controls .minimize:hover,
+.controls .cari:hover,
+.controls .close:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.controls .close:hover {
+  background-color: rgba(255, 59, 48, 0.3);
+}

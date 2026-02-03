@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Window from "./components/Window/Window";
 import Sidebar from "./components/Sidebar/Sidebar";
 import footer from "./assets/icons/footer.svg";
@@ -6,37 +6,66 @@ import "./App.css";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isWindowOpen, setIsWindowOpen] = useState(false);
-  const [selectedSection, setSelectedSection] = useState("home");
+  const [isWindowOpenDesktop, setIsWindowOpenDesktop] = useState(true); // TRUE pour desktop (ouvert par défaut)
+  const [isWindowOpenMobile, setIsWindowOpenMobile] = useState(false); // FALSE pour mobile (fermé par défaut)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Détecter si on est en mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleIconClick = (sectionId) => {
-    if (window.innerWidth <= 768) {
-      // Mode mobile : ouvrir le popup
-      setSelectedSection(sectionId);
-      setIsWindowOpen(true);
-    }
     setActiveSection(sectionId);
+    
+    if (isMobile) {
+      // Mode mobile : ouvrir le popup
+      setIsWindowOpenMobile(true);
+    } else {
+      // Mode desktop : s'assurer que la fenêtre est ouverte
+      if (!isWindowOpenDesktop) {
+        setIsWindowOpenDesktop(true);
+      }
+    }
   };
 
-  const closeWindow = () => {
-    setIsWindowOpen(false);
+  const closeDesktopWindow = () => {
+    setIsWindowOpenDesktop(false);
+  };
+
+  const closeMobileWindow = () => {
+    setIsWindowOpenMobile(false);
   };
 
   return (
     <div className="app">
-      {/* Sidebar - toujours présent */}
-      <Sidebar
-        active={activeSection}
-        setActive={handleIconClick}
-      />
-
-      {/* Zone window pour desktop */}
-      <div className="window-area">
-        <Window
+      {/* Sidebar - fixe à gauche sur desktop */}
+      <div className="sidebar-container">
+        <Sidebar
           active={activeSection}
-          setActive={setActiveSection}
+          setActive={handleIconClick}
         />
       </div>
+
+      {/* Zone window pour desktop - SEULEMENT si ouverte */}
+      {!isMobile && (
+        <div className="window-area">
+          {isWindowOpenDesktop ? (
+            <Window
+              active={activeSection}
+              setActive={setActiveSection}
+              onClose={closeDesktopWindow}
+              isMobile={false}
+            />
+          ) : (
+            null
+          )}
+        </div>
+      )}
 
       {/* Footer image tout en bas */}
       <div className="footer-bottom">
@@ -47,13 +76,14 @@ export default function App() {
         />
       </div>
 
-      {/* Fenêtre popup pour mobile */}
-      {isWindowOpen && (
+      {/* Fenêtre popup pour mobile - SEULEMENT si ouverte */}
+      {isMobile && isWindowOpenMobile && (
         <div className="mobile-window-overlay">
           <div className="mobile-window-container">
             <Window 
-              active={selectedSection} 
-              onClose={closeWindow}
+              active={activeSection} 
+              setActive={setActiveSection}
+              onClose={closeMobileWindow}
               isMobile={true}
             />
           </div>
