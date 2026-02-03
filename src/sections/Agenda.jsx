@@ -43,6 +43,16 @@ export default function Agenda() {
           <div className="phase-main days-row">
             <img src={day1} className="day-card" alt="Day 1" />
           </div>
+
+          <div className="phase-row design-phase">
+            
+            <div className="phase-main">
+              {/* Icône à l'extrême droite */}
+              <div className="phase-icon-right">
+                <img src={agendaicon2} className="phase-img3" alt="Day 1" />
+              </div>
+            </div>
+          </div>
            
           <div className="day2">
             <img src={day2} className="day-card2" alt="Day 2" />
@@ -53,8 +63,13 @@ export default function Agenda() {
              <span className="code-icon">{"{ }"}</span>
           </div>
 
-          {/* DEV PHASE SECTION */}
-          <div className="phase-row design-phase">
+
+
+
+
+
+
+<div className="phase-row design-phase">
             <div className="phase-sidebar">
               <img src={devPhase} className="phase-img" alt="Design Phase" />
             </div>
@@ -66,14 +81,35 @@ export default function Agenda() {
               </div>
             </div>
           </div>
-          <div className="phase-main">
-              <img src={day3} className="day-card" alt="Day 3" />
-              <img src={day4} className="day-card2" alt="Day 4" />
+
+          <div className="phase-main days-row">
+            <img src={day3} className="day-card" alt="Day 1" />
+          </div>
+
+          <div className="phase-row design-phase">
+            
+            <div className="phase-main">
+              {/* Icône à l'extrême droite */}
+              <div className="phase-icon-right">
+                <img src={agendaicon4} className="phase-img3" alt="Day 1" />
+              </div>
             </div>
-        </div>
+          </div>
+           
+          <div className="day2">
+            <img src={day4} className="day-card2" alt="Day 2" />
+          </div>
+
+
+
+
+
+
+</div>
+          </div>
 
         <img src={BigFooter} className="footer-img" alt="OMC Footer" />
-      </div>
+      
     </div>
   );
 }

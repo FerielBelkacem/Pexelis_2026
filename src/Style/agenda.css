@@ -73,6 +73,16 @@
   top: 0;
 }
 
+.phase-img3 {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 /* DAY 2 CONTAINER - CENTRÉ */
 .day2 {
   width: 100%;
@@ -218,3 +228,5 @@
     margin-right: 0;
   }
 }
+
+
