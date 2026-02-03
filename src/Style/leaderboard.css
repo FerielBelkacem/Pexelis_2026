@@ -1,3 +1,5 @@
+/* ========== DESKTOP STYLES ========== */
+
 /* Styles pour le tableau de classement */
 .leaderboard-table-container {
   margin: 2rem auto;
@@ -12,7 +14,7 @@
 .table-cadre-wrapper {
   position: relative;
   width: 100%;
-  height: 540px; /* Hauteur du tableau + marges pour le cadre */
+  height: 540px;
 }
 
 .cadre-overlay {
@@ -22,7 +24,7 @@
   right: -20px;
   bottom: -20px;
   z-index: 5;
-  pointer-events: none; /* Pour que le cadre ne bloque pas les interactions */
+  pointer-events: none;
 }
 
 .cadre-image {
@@ -74,7 +76,7 @@
 
 .leaderboard-table th,
 .leaderboard-table td {
-  padding: 1rem;
+  padding: 0.75rem 0.5rem; /* Réduit le padding horizontal */
   text-align: center;
   color: white;
   width: 14.28%;
@@ -202,48 +204,7 @@
   51%, 100% { opacity: 0; }
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-  .table-cadre-wrapper {
-    height: 240px; /* Ajustement pour mobile */
-  }
-  
-  .table-scroll-wrapper {
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .leaderboard-table {
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .leaderboard-table tbody {
-    max-height: calc(390px - 60px);
-    
-  }
-  
-  .cadre-overlay {
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-  }
-  
-  .leaderboard-table th,
-  .leaderboard-table td {
-    padding: 0.5rem;
-    font-size: 0.85rem;
-  }
-  
-  .leaderboard-table-container {
-    padding: 0.5rem;
-  }
-}
-
-/* ========== RESPONSIVE STYLES FOR MOBILE ========== */
-
+/* ========== MOBILE STYLES ========== */
 @media (max-width: 768px) {
   /* Container principal */
   .discord-page {
@@ -262,74 +223,60 @@
     display: block;
   }
 
-  /* Container du tableau - VERSION MODIFIÉE */
+  /* Container du tableau */
   .leaderboard-table-container {
     max-width: 100%;
     height: auto;
-    padding: 0px;
+    padding: 0;
     margin-top: -10px;
-    overflow: hidden; /* Important pour cacher le scroll externe */
+    overflow: hidden;
   }
 
   /* Wrapper du cadre */
   .table-cadre-wrapper {
     height: auto;
     min-height: 400px;
-    overflow: hidden; /* Cache tout débordement */
+    overflow: hidden;
+    padding: 5px;
   }
 
-  /* Cadre décoratif */
+  /* Cadre décoratif - caché sur mobile */
   .cadre-overlay {
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    overflow: hidden;
+    display: none;
   }
 
   .cadre-image {
-    display: none !important; /* Cache l'image du cadre */
+    display: none;
   }
 
-  /* Wrapper du scroll - VERSION SANS SCROLLBAR VISIBLE */
+  /* Wrapper du scroll */
   .table-scroll-wrapper {
     height: auto;
-    min-height: 300px;
-    max-height: 450px;
-    overflow: auto; /* Permet le scroll mais cache la barre */
+    min-height: 320px;
+    max-height: 420px;
+    overflow: auto;
     position: relative;
-    /* Cache toutes les scrollbars */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  /* Cache la scrollbar WebKit */
   .table-scroll-wrapper::-webkit-scrollbar {
     display: none;
-    width: 0;
-    height: 0;
-    background: transparent;
   }
 
   /* Tableau principal - version mobile */
   .leaderboard-table {
     display: table;
     width: 100%;
+    min-width: 650px; /* Largeur minimale réduite */
     height: auto;
-    min-width: 700px; /* Largeur minimale pour le scroll horizontal */
-    overflow: hidden; /* Pas de overflow sur le tableau lui-même */
     border-radius: 8px;
-    /* Cache toutes les scrollbars */
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
 
-  /* Cache la scrollbar WebKit pour le tableau */
   .leaderboard-table::-webkit-scrollbar {
     display: none;
-    width: 0;
-    height: 0;
-    background: transparent;
   }
 
   /* En-tête du tableau */
@@ -338,36 +285,53 @@
     top: 0;
     left: 0;
     z-index: 20;
+    background: linear-gradient(135deg, #0e1538 0%, #020617 100%);
   }
 
-  .leaderboard-table th {
-    min-width: 80px;
-    font-size: 0.8rem;
-    padding: 8px 6px;
-    white-space: nowrap;
-  }
-
+  /* CELLULES DU TABLEAU - ESPACEMENT RÉDUIT */
+  .leaderboard-table th,
   .leaderboard-table td {
-    min-width: 80px;
-    font-size: 0.8rem;
-    padding: 8px 6px;
+    padding: 8px 3px !important; /* Réduit de 8px 6px à 8px 3px */
+    font-size: 0.85rem; /* Taille de texte augmentée */
+    min-width: 65px !important; /* Réduit de 80px */
+    max-width: 100px;
     white-space: nowrap;
+    text-align: center;
   }
 
-  /* Cellules spécifiques */
-  .rank-cell {
-    font-weight: bold;
-    min-width: 50px;
+  /* Colonne Rank encore plus étroite */
+  .leaderboard-table th:first-child,
+  .leaderboard-table td:first-child {
+    min-width: 50px !important;
+    max-width: 50px;
+  }
+
+  /* Colonne Team un peu plus large mais avec gestion du texte */
+  .leaderboard-table th:nth-child(2),
+  .leaderboard-table td:nth-child(2) {
+    min-width: 100px !important;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Colonne School similaire à Team */
+  .leaderboard-table th:nth-child(7),
+  .leaderboard-table td:nth-child(7) {
+    min-width: 90px !important;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Lignes du tableau */
   .leaderboard-table tbody tr {
-    height: 40px;
+    height: 38px;
   }
 
-  /* Corps du tableau - cacher la scrollbar */
+  /* Corps du tableau */
   .leaderboard-table tbody {
-    max-height: 390px;
+    max-height: 350px;
     overflow: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -375,116 +339,106 @@
 
   .leaderboard-table tbody::-webkit-scrollbar {
     display: none;
-    width: 0;
-    height: 0;
-    background: transparent;
   }
 
-  /* RESPONSIVE POUR TRÈS PETITS ÉCRANS */
-  @media (max-width: 480px) {
-    .leaderboard-table th {
-      font-size: 0.7rem;
-      padding: 6px 4px;
-      min-width: 70px;
-    }
-
-    .leaderboard-table td {
-      font-size: 0.7rem;
-      padding: 6px 4px;
-      min-width: 70px;
-    }
-
-    .rank-cell {
-      min-width: 40px;
-    }
-
-    .leaderboard-table {
-      min-width: 650px;
-    }
-
-    .table-scroll-wrapper {
-      max-height: 400px;
-    }
-
-    .table-cadre-wrapper {
-      min-height: 350px;
-    }
-  }
-
-  /* POUR LES TABLETTES */
-  @media (min-width: 481px) and (max-width: 768px) {
-    .leaderboard-table th {
-      font-size: 0.85rem;
-      padding: 10px 8px;
-    }
-
-    .leaderboard-table td {
-      font-size: 0.85rem;
-      padding: 10px 8px;
-    }
-
-    .leaderboard-table {
-      min-width: 750px;
-    }
-  }
-}
-
-/* ========== STYLES GLOBAUX POUR CACHER LES SCROLLBARS ========== */
-
-/* Pour tous les éléments avec scroll */
-* {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-/* Pour WebKit browsers (Chrome, Safari, Opera) */
-*::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-  background: transparent;
-}
-
-/* ========== CORRECTION SPÉCIFIQUE POUR LE CADRE ========== */
-@media (max-width: 768px) {
-  .cadre-image {
-    object-fit: contain;
-    opacity: 0.8;
-    pointer-events: none;
-  }
-
-  .table-cadre-wrapper {
-    padding: 5px;
-    overflow: hidden;
-  }
-
-  .cadre-overlay {
-    pointer-events: none;
-  }
-}
-
-/* ========== AMÉLIORATION DE LA VISIBILITÉ ========== */
-@media (max-width: 768px) {
-  .leaderboard-table thead {
-    background: linear-gradient(135deg, #0e1538 0%, #020617 100%);
-  }
-
+  /* En-tête avec bordure visible */
   .leaderboard-table th {
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     border-bottom: 2px solid #F3C01D;
   }
 
   /* Amélioration de la lisibilité des lignes */
   .leaderboard-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.03);
   }
 
-  /* Effet hover plus visible sur mobile */
+  /* Effet au toucher */
   .leaderboard-table tbody tr:active {
-    background-color: rgba(122, 183, 255, 0.2) !important;
-    transform: scale(0.99);
-    transition: transform 0.1s ease;
+    background-color: rgba(122, 183, 255, 0.15) !important;
+  }
+
+  /* ========== TRÈS PETITS ÉCRANS (< 480px) ========== */
+  @media (max-width: 480px) {
+    .table-scroll-wrapper {
+      max-height: 380px;
+      min-height: 280px;
+    }
+
+    .table-cadre-wrapper {
+      min-height: 320px;
+    }
+
+    .leaderboard-table {
+      min-width: 600px; /* Encore plus réduit */
+    }
+
+    /* ESPACEMENT ENCORE PLUS RÉDUIT */
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 7px 2px !important; /* Réduit encore le padding horizontal */
+      font-size: 0.82rem; /* Taille préservée */
+      min-width: 55px !important; /* Réduit de 65px */
+    }
+
+    /* Colonnes spécifiques */
+    .leaderboard-table th:first-child,
+    .leaderboard-table td:first-child {
+      min-width: 40px !important;
+      max-width: 40px;
+    }
+
+    .leaderboard-table th:nth-child(2),
+    .leaderboard-table td:nth-child(2) {
+      min-width: 85px !important;
+      max-width: 100px;
+    }
+
+    .leaderboard-table th:nth-child(7),
+    .leaderboard-table td:nth-child(7) {
+      min-width: 80px !important;
+      max-width: 95px;
+    }
+
+    .leaderboard-table tbody tr {
+      height: 36px;
+    }
+  }
+
+  /* ========== TABLETTES (481px - 768px) ========== */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .table-scroll-wrapper {
+      max-height: 450px;
+    }
+
+    .leaderboard-table {
+      min-width: 700px;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+      padding: 9px 4px !important;
+      font-size: 0.88rem;
+      min-width: 70px !important;
+    }
+
+    .leaderboard-table th:first-child,
+    .leaderboard-table td:first-child {
+      min-width: 55px !important;
+      max-width: 55px;
+    }
+
+    .leaderboard-table th:nth-child(2),
+    .leaderboard-table td:nth-child(2) {
+      min-width: 110px !important;
+      max-width: 130px;
+    }
+
+    .leaderboard-table th:nth-child(7),
+    .leaderboard-table td:nth-child(7) {
+      min-width: 95px !important;
+      max-width: 115px;
+    }
   }
 }
 
@@ -505,34 +459,92 @@
 
   .leaderboard-table th,
   .leaderboard-table td {
-    padding: 6px 4px;
-    font-size: 0.75rem;
+    padding: 6px 2px !important;
+    font-size: 0.8rem;
   }
 
   .table-cadre-wrapper {
-    min-height: 320px;
+    min-height: 300px;
   }
 }
 
-/* ========== SUPPRESSION DES ANCIENS STYLES DE SCROLLBAR ========== */
-/* Supprimez ou commentez ces lignes si elles existent : */
-
-/*
-.leaderboard-table::-webkit-scrollbar {
-  display: none;
-}
-
-.leaderboard-table {
-  -ms-overflow-style: none;
+/* ========== CACHER LES SCROLLBARS GLOBALEMENT ========== */
+* {
   scrollbar-width: none;
-}
-
-.leaderboard-table tbody::-webkit-scrollbar {
-  display: none;
-}
-
-.leaderboard-table tbody {
   -ms-overflow-style: none;
-  scrollbar-width: none;
 }
-*/
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+
+/* Styles pour le carré de rank pointillé */
+.rank-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 2px dashed; /* Bordure pointillée */
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.1);
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.rank-square:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+  .rank-square {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    border-width: 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rank-square {
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Couleurs spécifiques par rank */
+.leaderboard-table tbody tr:nth-child(1) .rank-square {
+  border-color: #F3C01D;
+  color: #F3C01D;
+  box-shadow: 0 0 2px rgba(243, 192, 29, 0.3);
+}
+
+.leaderboard-table tbody tr:nth-child(2) .rank-square {
+  border-color: #F93D3E;
+  color: #F93D3E;
+  box-shadow: 0 0 2px rgba(249, 61, 62, 0.3);
+}
+
+.leaderboard-table tbody tr:nth-child(3) .rank-square,
+.leaderboard-table tbody tr:nth-child(4) .rank-square {
+  border-color: #7AB7FF;
+  color: #7AB7FF;
+  box-shadow: 0 0 2px rgba(122, 183, 255, 0.3);
+}
+
+.leaderboard-table tbody tr:nth-child(n+5) .rank-square {
+  border-color: #8931ED;
+  color: #8931ED;
+  box-shadow: 0 0 2px rgba(137, 49, 237, 0.3);
+}

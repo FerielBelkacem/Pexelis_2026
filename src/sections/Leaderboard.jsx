@@ -14,8 +14,16 @@ export default function Discord() {
       .then(setLeaderboardData)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-       console.log("ENV CHECK", import.meta.env.VITE_SHEET_ID)
+    console.log("ENV CHECK", import.meta.env.VITE_SHEET_ID);
   }, []);
+
+  // Fonction pour déterminer la couleur du rank basée sur la position
+  const getRankBorderColor = (rank) => {
+    if (rank === 1) return "#F3C01D"; // Or
+    if (rank === 2) return "#F93D3E"; // Argent
+    if (rank === 3 || rank === 4) return "#7AB7FF"; // Bronze
+    return "#8931ED"; // Pour les autres
+  };
 
   return (
     <div className="discord-page">
@@ -56,19 +64,31 @@ export default function Discord() {
                 </thead>
 
                 <tbody>
-                  {leaderboardData.map((row, index) => (
-                    <tr
-                      key={row.rank}
-                      className={`rank-${row.rank} row-${index}`}
-                      data-row-index={index}
-                    >
-                      <td className="rank-cell">{row.rank}</td>
-                      <td>{row.team}</td>
-                      <td>{row.d1}</td>
-                      <td>{row.d2}</td>
-                      <td>{row.total}</td>
-                    </tr>
-                  ))}
+                  {leaderboardData.map((row, index) => {
+                    const rankColor = getRankBorderColor(row.rank);
+                    return (
+                      <tr
+                        key={row.rank}
+                        className={`rank-${row.rank} row-${index}`}
+                        data-row-index={index}
+                      >
+                        <td className="rank-cell">
+                          <div 
+                            className="rank-square"
+                            style={{ 
+                              borderColor: rankColor, // Couleur du carré seulement
+                            }}
+                          >
+                            {row.rank}
+                          </div>
+                        </td>
+                        <td>{row.team}</td>
+                        <td>{row.d1}</td>
+                        <td>{row.d2}</td>
+                        <td>{row.total}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             )}
