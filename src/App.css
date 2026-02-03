@@ -56,6 +56,27 @@
   pointer-events: none;
 }
 
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    pointer-events: auto;
+  }
+  
+  .footer-bottom::before {
+    pointer-events: auto;
+  }
+}
+
 .footer-image {
   width: 100%;
   height: auto;
