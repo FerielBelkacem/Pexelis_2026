@@ -143,3 +143,42 @@
     display: none !important;
   }
 }
+
+/* Styles existants... */
+
+.footer-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none; /* Permettre les clics à travers le footer */
+}
+
+.footer-image {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+/* Optionnel : styles spécifiques pour le footer mobile */
+.footer-image.mobile-footer {
+  /* Ajoutez des styles spécifiques si nécessaire */
+  max-height: 150px; /* Limitez la hauteur si besoin */
+  object-fit: contain; /* Assure que l'image ne s'étire pas */
+}
+
+/* Pour les petits écrans, assurez-vous que le footer est toujours visible */
+@media (max-width: 768px) {
+  .footer-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus de tout */
+  }
+}
+
+/* Ajustez le z-index du popup mobile pour qu'il soit au-dessus du footer */
+.mobile-window-overlay {
+  z-index: 1001; /* Juste au-dessus du footer */
+}

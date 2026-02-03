@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import Window from "./components/Window/Window";
 import Sidebar from "./components/Sidebar/Sidebar";
 import footer from "./assets/icons/footer.svg";
+import footerMobile from "./assets/decorations/footerMobile.svg"; // Importez la version mobile
 import "./App.css";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
-  const [isWindowOpenDesktop, setIsWindowOpenDesktop] = useState(true); // TRUE pour desktop (ouvert par défaut)
-  const [isWindowOpenMobile, setIsWindowOpenMobile] = useState(false); // FALSE pour mobile (fermé par défaut)
+  const [isWindowOpenDesktop, setIsWindowOpenDesktop] = useState(true);
+  const [isWindowOpenMobile, setIsWindowOpenMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   // Détecter si on est en mobile
@@ -23,10 +24,8 @@ export default function App() {
     setActiveSection(sectionId);
     
     if (isMobile) {
-      // Mode mobile : ouvrir le popup
       setIsWindowOpenMobile(true);
     } else {
-      // Mode desktop : s'assurer que la fenêtre est ouverte
       if (!isWindowOpenDesktop) {
         setIsWindowOpenDesktop(true);
       }
@@ -51,7 +50,7 @@ export default function App() {
         />
       </div>
 
-      {/* Zone window pour desktop - SEULEMENT si ouverte */}
+      {/* Zone window pour desktop */}
       {!isMobile && (
         <div className="window-area">
           {isWindowOpenDesktop ? (
@@ -61,22 +60,20 @@ export default function App() {
               onClose={closeDesktopWindow}
               isMobile={false}
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </div>
       )}
 
-      {/* Footer image tout en bas */}
+      {/* Footer image - Utilisation conditionnelle selon le device */}
       <div className="footer-bottom">
         <img 
-          src={footer} 
+          src={isMobile ? footerMobile : footer} // Image différente selon le device
           alt="Footer" 
-          className="footer-image"
+          className={`footer-image ${isMobile ? 'mobile-footer' : ''}`}
         />
       </div>
 
-      {/* Fenêtre popup pour mobile - SEULEMENT si ouverte */}
+      {/* Fenêtre popup pour mobile */}
       {isMobile && isWindowOpenMobile && (
         <div className="mobile-window-overlay">
           <div className="mobile-window-container">
