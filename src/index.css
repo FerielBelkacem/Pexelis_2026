@@ -43,7 +43,7 @@ body {
     padding-right: 20px;
     background-image:
       url("./assets/decorations/Group 288743.svg"), /* TOP */
-      url("./assets/background/background.svg");   /* BOTTOM */
+      url("../public/background.svg");   /* BOTTOM */
 
     background-size:
       auto 70%,   /* PNG size (NOT full) */
