@@ -182,3 +182,80 @@
 .mobile-window-overlay {
   z-index: 1001; /* Juste au-dessus du footer */
 }
+
+
+
+/* Logo OMC container */
+.omc-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo OMC */
+.omc-logo {
+  width: 300px;
+  height: auto;
+  max-width: 80%;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+/*.omc-logo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}*/
+
+/* Pour les grands écrans uniquement */
+@media (min-width: 769px) {
+  .omc-logo-container {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .omc-logo-container {
+    display: none; /* Cache le logo sur mobile */
+  }
+}
+
+/* Ajustement pour le window-area quand le logo est affiché */
+.window-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+/* Assurez-vous que le footer ne couvre pas le logo */
+.footer-bottom {
+  z-index: 0; /* Gardez un z-index bas pour le footer */
+}
+
+/* Ajustements pour les très grands écrans */
+@media (min-width: 1400px) {
+  .omc-logo {
+    width: 400px;
+  }
+}
+
+/* Animation d'apparition 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+.omc-logo {
+  animation: fadeIn 0.5s ease-out;
+}*/

@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Window from "./components/Window/Window";
 import Sidebar from "./components/Sidebar/Sidebar";
 import footer from "./assets/icons/footer.svg";
-import footerMobile from "./assets/decorations/footerMobile.svg"; // Importez la version mobile
+import footerMobile from "./assets/decorations/footerMobile.svg";
+import omcLogo from "./assets/logo/omc.svg"; // Importez le logo OMC
 import "./App.css";
 
 export default function App() {
@@ -11,7 +12,6 @@ export default function App() {
   const [isWindowOpenMobile, setIsWindowOpenMobile] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Détecter si on est en mobile
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -60,14 +60,24 @@ export default function App() {
               onClose={closeDesktopWindow}
               isMobile={false}
             />
-          ) : null}
+          ) : (
+            // Logo OMC qui apparaît quand la fenêtre est fermée sur desktop
+            <div className="omc-logo-container">
+              <img 
+                src={omcLogo} 
+                alt="OMC Logo" 
+                className="omc-logo"
+                onClick={() => setIsWindowOpenDesktop(true)} // Optionnel: rouvrir la fenêtre au clic
+              />
+            </div>
+          )}
         </div>
       )}
 
-      {/* Footer image - Utilisation conditionnelle selon le device */}
+      {/* Footer image */}
       <div className="footer-bottom">
         <img 
-          src={isMobile ? footerMobile : footer} // Image différente selon le device
+          src={isMobile ? footerMobile : footer}
           alt="Footer" 
           className={`footer-image ${isMobile ? 'mobile-footer' : ''}`}
         />
