@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import header2 from "../assets/leaderboard/header2.svg";
+import header2 from "../assets/leaderboard/leaderboard-top.svg";
 import cadre from "../assets/leaderboard/cadre.png";
 import "../Style/leaderboard.css";
 import { getLeaderboard } from "../api/leaderboardService";

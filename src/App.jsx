@@ -40,6 +40,12 @@ export default function App() {
     setIsWindowOpenMobile(false);
   };
 
+  const handleFooterClick = (e) => {
+    if (isMobile && e.clientX < window.innerWidth * 0.3) {
+      handleIconClick("about");
+    }
+  };
+
   return (
     <div className="app">
       {/* Sidebar - fixe à gauche sur desktop */}
@@ -75,7 +81,7 @@ export default function App() {
       )}
 
       {/* Footer image */}
-      <div className="footer-bottom">
+      <div className="footer-bottom" onClick={handleFooterClick}>
         <img 
           src={isMobile ? footerMobile : footer}
           alt="Footer" 

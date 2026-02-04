@@ -62,8 +62,8 @@ export default function Window({ active, setActive, onClose, isMobile }) {
         {active === "home" && <Home setActive={setActive} />}
         {active === "picture" && <Picture />}
         {active === "about" && <About />}
-        {active === "password" && <Leaderboard />}
-        {/*{active === "password" && <Close />}*/}
+        {/*{active === "password" && <Leaderboard />}*/}
+        {active === "password" && <Close />}
         {/*{active === "sponsors" && <Sponsors />}*/}
         {active === "sponsors" && <Close />}
         {active === "agenda" && <Agenda />}

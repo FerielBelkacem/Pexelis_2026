@@ -3,6 +3,7 @@
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .app {
@@ -55,6 +56,27 @@
   pointer-events: none;
 }
 
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    pointer-events: auto;
+  }
+  
+  .footer-bottom::before {
+    pointer-events: auto;
+  }
+}
+
 .footer-image {
   width: 100%;
   height: auto;
@@ -99,18 +121,23 @@
 @media (max-width: 768px) {
   .app {
     flex-direction: column;
+    overflow-x: hidden;
+    width: 100vw;
   }
   
   .sidebar-container {
-    width: 100%;
-    padding: 20px;
+    width: 100vw;
+    padding: 0;
+    overflow-x: hidden;
+    position: fixed;
   }
   
 .sidebar {
-  width: 140px;
+  width: 100vw;
   height: 93vh;
-  padding: 28px;
+  padding: 20px 15px 10% 15px;
   overflow: auto;
+  overflow-x: hidden;
    
   display: grid;
   grid-template-columns: repeat(1, 1fr);
