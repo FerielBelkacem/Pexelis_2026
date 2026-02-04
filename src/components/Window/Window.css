@@ -104,6 +104,7 @@
 .controls {
   display: flex;
   align-items: center;
+  
 }
 
 .controls span {

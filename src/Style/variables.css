@@ -301,6 +301,8 @@
   width: 280px;
   max-width: 40vw;
   animation: float 3s ease-in-out infinite;
+  padding: 30px;
+ 
 }
 
 /* ---------- content column ---------- */
@@ -1201,6 +1203,7 @@
     max-width: 300px;
     height: auto;
     display: block;
+    padding-right:20px ;
 }
 
 /* --- RESPONSIVE DESIGN FOR SMALL DEVICES --- */
@@ -1242,9 +1245,17 @@
         margin-top: 25px;
         margin-bottom: 15px;
     }
-    
+    .deco.alien{
+      right: 10px;
+    }
+    .deco.squid{
+      left: 10px;
+    }
     .card-bg {
         max-width: 280px; /* Can make it larger since it's single column */
+    }
+    .title-img{
+      width: 280px;
     }
     
     /* Optional: Reduce hover effect on touch devices */
