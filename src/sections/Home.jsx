@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useRef } from "react";
 import heroTitle from "../assets/decorations/Group 6.png";
 import defaultBtn from "../assets/icons/start-btn.png";
-import hoverBtn from "../assets/decorations/Group_185.svg";
+import startSound from "../assets/sounds/start-click.mp3";
 
 export default function Home({ setActive }) {
-  const [hover, setHover] = useState(false);
+
+  // 🎵 sound instance (created once)
+  const clickSound = useRef(new Audio(startSound));
+
+  const handleClick = () => {
+    clickSound.current.currentTime = 0; // restart sound
+    clickSound.current.volume = 0.4;    // adjust volume
+    clickSound.current.play();
+
+    setActive("about");
+  };
 
   return (
     <div className="window-content home-page">
@@ -12,11 +22,9 @@ export default function Home({ setActive }) {
 
       <div
         className="start-btn"
-        onClick={() => setActive("about")}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onClick={handleClick}
       >
-        <img src={hover ? hoverBtn : defaultBtn} alt="Start Button" />
+        <img src={defaultBtn} alt="Start Button" />
       </div>
     </div>
   );

@@ -40,19 +40,18 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-right: 0;
+    align-items: stretch;
+
     background-image:
-      url("./assets/decorations/Group 288743.svg"), /* TOP */
-      url("../public/background.svg");   /* BOTTOM */
+      url("./assets/decorations/Group 288743.svg"), /* TOP DECOR */
+      url("./assets/background/mobile-bg.png");    /* MAIN MOBILE BG */
 
     background-size:
-      auto 70%,   /* PNG size (NOT full) */
-      cover;
+      auto 70%,   /* top decoration */
+      cover;      /* main background */
 
-    /* Avant : right center */
-    /* Après : décalé vers la gauche */
     background-position:
-      calc(100% - 30px) center, /* ← PLUS VERS LA GAUCHE */
+      right center,
       center;
 
     background-repeat:
@@ -60,6 +59,7 @@ body {
       no-repeat;
   }
 }
+
 
 @media (max-width: 768px) {
   body {

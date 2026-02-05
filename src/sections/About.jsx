@@ -33,7 +33,7 @@ export default function About() {
         <img src={aboutus} className="decor aboutus" alt="About us" />
         <img src={omctag} className="decor omctag" alt="OMC Tag" />
         <img src={alien} className="decor alien" alt="Alien" />
-        <img src={execut} className="decor execution" alt="Execution" />
+       
         <img src={omcicon} className="decor omc" alt="OMC Icon" />
         <img src={figmalogo} className="decor figma" alt="Figma Logo" />
         <img src={key} className="decor key" alt="Key" />
@@ -63,7 +63,7 @@ export default function About() {
             <br />
             Over four intense days, participants work through design and
             development challenges to simulate a real-world product workflow,
-            from concept to
+            from concept to <span className="execut">execution</span>
           </p>
         </section>
 

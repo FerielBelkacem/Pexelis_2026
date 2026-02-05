@@ -4,9 +4,15 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import footer from "./assets/icons/footer.svg";
 import footerMobile from "./assets/decorations/footerMobile.svg";
 import omcLogo from "./assets/logo/omc.svg"; // Importez le logo OMC
+import useClickSound from "./hooks/useClickSound";
+import useFooterSound from "./hooks/useFooterSound";
+
 import "./App.css";
 
 export default function App() {
+  useClickSound();
+  const playFooterSound = useFooterSound();
+
   const [activeSection, setActiveSection] = useState("home");
   const [isWindowOpenDesktop, setIsWindowOpenDesktop] = useState(true);
   const [isWindowOpenMobile, setIsWindowOpenMobile] = useState(false);
@@ -41,6 +47,7 @@ export default function App() {
   };
 
   const handleFooterClick = (e) => {
+     playFooterSound();
     if (isMobile && e.clientX < window.innerWidth * 0.3) {
       handleIconClick("about");
     }
