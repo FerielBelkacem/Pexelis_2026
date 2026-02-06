@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import heroTitle from "../assets/decorations/Group 6.png";
+import heroTitle from "../assets/decorations/Group 6.svg";
 import defaultBtn from "../assets/icons/start-btn.png";
 import startSound from "../assets/sounds/start-click.mp3";
 
