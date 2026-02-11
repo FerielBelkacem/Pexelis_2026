@@ -10,6 +10,7 @@ import agendaicon1 from "../assets/agenda/agendaicon11.svg"
 import agendaicon2 from "../assets/agenda/agendaicon12.svg"
 import agendaicon3 from "../assets/agenda/agendaicon21.svg"
 import agendaicon4 from "../assets/agenda/agendaicon22.svg"
+import agendaUpdate from "../assets/agenda/agendaupdate.svg"
 import "../Style/agenda.css"
 
 export default function Agenda() {
@@ -97,7 +98,7 @@ export default function Agenda() {
           </div>
            
           <div className="day2">
-            <img src={day4} className="day-card2" alt="Day 2" />
+            <img src={agendaUpdate} className="day-card2" alt="Day 2" />
           </div>
 
 
