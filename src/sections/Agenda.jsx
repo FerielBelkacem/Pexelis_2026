@@ -10,6 +10,8 @@ import agendaicon1 from "../assets/agenda/agendaicon11.svg"
 import agendaicon2 from "../assets/agenda/agendaicon12.svg"
 import agendaicon3 from "../assets/agenda/agendaicon21.svg"
 import agendaicon4 from "../assets/agenda/agendaicon22.svg"
+import agendaUpdate from "../assets/agenda/agendaupdate.svg"
+import devphase from "../assets/agenda/devphase.svg"
 import "../Style/agenda.css"
 
 export default function Agenda() {
@@ -64,47 +66,9 @@ export default function Agenda() {
           </div>
 
 
-
-
-
-
-
-<div className="phase-row design-phase">
-            <div className="phase-sidebar">
-              <img src={devPhase} className="phase-img" alt="Design Phase" />
-            </div>
-            
-            <div className="phase-main">
-              {/* Icône à l'extrême droite */}
-              <div className="phase-icon-right">
-                <img src={agendaicon3} className="phase-img2" alt="Day 1" />
-              </div>
-            </div>
+          <div className="phase-main days-row devphase">
+            <img src={devphase} className="day-card" alt="Day 1" />
           </div>
-
-          <div className="phase-main days-row">
-            <img src={day3} className="day-card" alt="Day 1" />
-          </div>
-
-          <div className="phase-row design-phase">
-            
-            <div className="phase-main">
-              {/* Icône à l'extrême droite */}
-              <div className="phase-icon-right">
-                <img src={agendaicon4} className="phase-img3" alt="Day 1" />
-              </div>
-            </div>
-          </div>
-           
-          <div className="day2">
-            <img src={day4} className="day-card2" alt="Day 2" />
-          </div>
-
-
-
-
-
-
 </div>
           </div>
 
