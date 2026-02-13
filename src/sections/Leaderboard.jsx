@@ -14,15 +14,16 @@ export default function Discord() {
       .then(setLeaderboardData)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
+
     console.log("ENV CHECK", import.meta.env.VITE_SHEET_ID);
   }, []);
 
-  // Fonction pour déterminer la couleur du rank basée sur la position
+
   const getRankBorderColor = (rank) => {
-    if (rank === 1) return "#F3C01D"; // Or
-    if (rank === 2) return "#F93D3E"; // Argent
+    if (rank === 1) return "#F3C01D"; // Gold
+    if (rank === 2) return "#F93D3E"; // Silver
     if (rank === 3 || rank === 4) return "#7AB7FF"; // Bronze
-    return "#8931ED"; // Pour les autres
+    return "#8931ED"; // Others
   };
 
   return (
@@ -55,37 +56,48 @@ export default function Discord() {
               <table className="leaderboard-table">
                 <thead>
                   <tr className="table-header">
-                    <th>Rank</th>
+                    <th>Design Rank</th>
+                    <th>Dev Rank</th>
                     <th>Team Name</th>
-                    <th>Phase1</th>
-                    <th>Phase2</th>
-                    <th>Total Points</th>
+                    <th>Design Points</th>
+                    <th>Dev Points</th>
                   </tr>
                 </thead>
 
                 <tbody>
                   {leaderboardData.map((row, index) => {
-                    const rankColor = getRankBorderColor(row.rank);
+                    const designRankColor = getRankBorderColor(row.designRank);
+                    const devRankColor = getRankBorderColor(row.devRank);
+
                     return (
                       <tr
-                        key={row.rank}
-                        className={`rank-${row.rank} row-${index}`}
+                        key={row.team}
+                        className={`row-${index}`}
                         data-row-index={index}
                       >
+                        {/* Design Rank */}
                         <td className="rank-cell">
-                          <div 
+                          <div
                             className="rank-square"
-                            style={{ 
-                              borderColor: rankColor, // Couleur du carré seulement
-                            }}
+                            style={{ borderColor: designRankColor }}
                           >
-                            {row.rank}
+                            {row.designRank}
                           </div>
                         </td>
+
+                        {/* Dev Rank */}
+                        <td className="rank-cell">
+                          <div
+                            className="rank-square"
+                            style={{ borderColor: devRankColor }}
+                          >
+                            {row.devRank}
+                          </div>
+                        </td>
+
                         <td>{row.team}</td>
-                        <td>{row.d1}</td>
-                        <td>{row.d2}</td>
-                        <td>{row.total}</td>
+                        <td>{row.designPoints}</td>
+                        <td>{row.devPoints}</td>
                       </tr>
                     );
                   })}
