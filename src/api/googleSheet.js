@@ -14,12 +14,17 @@ export async function fetchLeaderboard() {
 
   const data = await res.json();
 
-  return data.map(row => ({
-  team: row.Team,
-  designPoints: `${row["Design points"]}P`,
-  devPoints: `${row["Dev Points"]}P`,
-  designRank: Number(row["Design rank"]),
-  devRank: Number(row["Dev Rank"]),
-}));
+return data.map(row => {
+  console.log(row);
+  return {
+    team: row.Team,
+    designPoints: Number(row["Design Points"]),
+    devPoints: Number(row["Dev Points"]),
+    designRank: Number(row["Design Rank"]),
+    devRank: Number(row["Dev Rank"]),
+  };
+});
+
+
 
 }
